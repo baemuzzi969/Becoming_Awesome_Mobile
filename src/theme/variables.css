@@ -1,0 +1,59 @@
+/* For information on how to create your own theme, please see:
+http://ionicframework.com/docs/theming/ */
+
+/* Import Roboto font from Google Fonts */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Utility for IonInput styles */
+.custom-input {
+  /* Padding */
+  --padding-start: 0.75rem;
+  --padding-end: 0.75rem;
+}
+
+.custom-input::placeholder {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #a9a9a9;
+}
+
+.button-gradient {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #282828;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 300;
+  src: url("/font/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url("/font/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  src: url("/font/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 700;
+  src: url("/font/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 900;
+  src: url("/font/Roboto-Black.ttf");
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Becoming_Awesome_Mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
