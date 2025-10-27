@@ -6,15 +6,29 @@ import Header from "../components/Header";
 const SignIn: React.FC = () => {
   const router = useIonRouter();
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState<{
+    username?: string;
+    password?: string;
+  }>({});
 
   const handleSignin = async () => {
-    if (!username || !password) {
-      // Show validation error
+    const newErrors: { username?: string; password?: string } = {};
+
+    if (!username) {
+      newErrors.username = "Email or username is required";
+    }
+    if (!password) {
+      newErrors.password = "Password is required";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
       return;
     }
+
     // Here you would typically validate credentials with your backend
     // For now, we'll just navigate to the profile page
     router.push("/profile");
@@ -53,12 +67,24 @@ const SignIn: React.FC = () => {
                   Email or Username
                 </span>
                 <input
-                  className="custom-input text-[#282828] text-sm border border-solid border-[#A9A9A9] rounded-lg w-full p-[10px] outline-none"
+                  className={`custom-input text-[#282828] text-sm border border-solid ${
+                    errors.username ? "border-red-500" : "border-[#A9A9A9]"
+                  } rounded-lg w-full p-[10px] outline-none`}
                   placeholder="Enter your email or username"
                   type="text"
                   value={username}
-                  onChange={(e) => setUsername(e.target.value ?? "")}
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                    if (errors.username) {
+                      setErrors((prev) => ({ ...prev, username: undefined }));
+                    }
+                  }}
                 />
+                {errors.username && (
+                  <div className="text-red-500 text-xs mt-1">
+                    {errors.username}
+                  </div>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -67,11 +93,18 @@ const SignIn: React.FC = () => {
                 </span>
                 <div className="relative">
                   <input
-                    className="custom-input text-[#282828] text-sm border border-solid border-[#A9A9A9] rounded-lg w-full p-[10px] outline-none"
+                    className={`custom-input text-[#282828] text-sm border border-solid ${
+                      errors.password ? "border-red-500" : "border-[#A9A9A9]"
+                    } rounded-lg w-full p-[10px] outline-none`}
                     placeholder="Enter your password"
                     type={showPassword ? "text" : "password"}
                     value={password}
-                    onChange={(e) => setPassword(e.target.value ?? "")}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                      if (errors.password) {
+                        setErrors((prev) => ({ ...prev, password: undefined }));
+                      }
+                    }}
                   />
                   <button
                     className="absolute right-2 top-1/2 transform -translate-y-1/2"
@@ -83,6 +116,11 @@ const SignIn: React.FC = () => {
                     />
                   </button>
                 </div>
+                {errors.password && (
+                  <div className="text-red-500 text-xs mt-1">
+                    {errors.password}
+                  </div>
+                )}
               </div>
 
               <div className="w-full flex flex-row justify-between">

@@ -9,13 +9,45 @@ const SignUp: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState<{
+    username?: string;
+    email?: string;
+    password?: string;
+  }>({});
 
-  const handleSignup = async () => {
-    if (!username || !email || !password) {
-      // Show validation error
+  const handleSignup = () => {
+    // Clear any existing errors
+    setErrors({});
+
+    let newErrors: { [key: string]: string } = {};
+    let hasErrors = false;
+
+    // Validate username
+    if (!username || username.length < 3) {
+      newErrors.username = "Username must be at least 3 characters long";
+      hasErrors = true;
+    }
+
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      newErrors.email = "Please enter a valid email address";
+      hasErrors = true;
+    }
+
+    // Validate password
+    if (!password || password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters long";
+      hasErrors = true;
+    }
+
+    if (hasErrors) {
+      setErrors(newErrors);
       return;
     }
-    // Handle signup logic here
+
+    // If validation passes, proceed with signup
+    console.log("Signing up with:", { username, email, password });
   };
 
   const handleGoogleSignIn = () => {
@@ -51,12 +83,24 @@ const SignUp: React.FC = () => {
                   Username
                 </span>
                 <input
-                  className="custom-input text-[#282828] text-sm border border-solid border-[#A9A9A9] rounded-lg w-full p-[10px] outline-none"
+                  className={`custom-input text-[#282828] text-sm border border-solid ${
+                    errors.username ? "border-red-500" : "border-[#A9A9A9]"
+                  } rounded-lg w-full p-[10px] outline-none`}
                   placeholder="Enter your username"
                   type="text"
                   value={username}
-                  onChange={(e) => setUsername(e.target.value ?? "")}
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                    if (errors.username) {
+                      setErrors((prev) => ({ ...prev, username: undefined }));
+                    }
+                  }}
                 />
+                {errors.username && (
+                  <div className="text-red-500 text-xs mt-1">
+                    {errors.username}
+                  </div>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -64,12 +108,24 @@ const SignUp: React.FC = () => {
                   Email
                 </span>
                 <input
-                  className="custom-input text-[#282828] text-sm border border-solid border-[#A9A9A9] rounded-lg w-full p-[10px] outline-none"
+                  className={`custom-input text-[#282828] text-sm border border-solid ${
+                    errors.email ? "border-red-500" : "border-[#A9A9A9]"
+                  } rounded-lg w-full p-[10px] outline-none`}
                   placeholder="Enter your email"
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value ?? "")}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (errors.email) {
+                      setErrors((prev) => ({ ...prev, email: undefined }));
+                    }
+                  }}
                 />
+                {errors.email && (
+                  <div className="text-red-500 text-xs mt-1">
+                    {errors.email}
+                  </div>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -78,11 +134,18 @@ const SignUp: React.FC = () => {
                 </span>
                 <div className="relative">
                   <input
-                    className="custom-input text-[#282828] text-sm border border-solid border-[#A9A9A9] rounded-lg w-full p-[10px] outline-none"
+                    className={`custom-input text-[#282828] text-sm border border-solid ${
+                      errors.password ? "border-red-500" : "border-[#A9A9A9]"
+                    } rounded-lg w-full p-[10px] outline-none`}
                     placeholder="Enter your password"
                     type={showPassword ? "text" : "password"}
                     value={password}
-                    onChange={(e) => setPassword(e.target.value ?? "")}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                      if (errors.password) {
+                        setErrors((prev) => ({ ...prev, password: undefined }));
+                      }
+                    }}
                   />
                   <button
                     className="absolute right-2 top-1/2 transform -translate-y-1/2"
@@ -94,6 +157,11 @@ const SignUp: React.FC = () => {
                     />
                   </button>
                 </div>
+                {errors.password && (
+                  <div className="text-red-500 text-xs mt-1">
+                    {errors.password}
+                  </div>
+                )}
               </div>
 
               <span className="text-sm font-normal font-roboto mt-2">
