@@ -113,20 +113,9 @@ const PaymentDetail: React.FC = () => {
       return;
     }
 
-    // All validations passed — proceed
+    // All validations passed — proceed to onboarding
     setErrors({});
-    console.log("Payment details valid", {
-      cardNumber,
-      expDate,
-      securityCode,
-      nameOnCard,
-      billingAddress,
-      cityVal,
-      stateVal,
-      zipVal,
-      countryVal,
-    });
-    // TODO: submit or navigate
+    router.push("/tabs/program/welcome", "forward", "replace");
   };
 
   return (

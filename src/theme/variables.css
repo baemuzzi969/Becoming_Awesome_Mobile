@@ -57,3 +57,11 @@ http://ionicframework.com/docs/theming/ */
   font-weight: 900;
   src: url("/font/Roboto-Black.ttf");
 }
+
+ion-tab-button.tab-selected ion-icon {
+  color: #4c1543;
+}
+
+ion-tab-button.tab-selected ion-label {
+  color: #4c1543;
+}
