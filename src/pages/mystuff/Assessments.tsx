@@ -4,15 +4,9 @@ import Header from "../../components/Header";
 import NotificationBell from "../../components/NotificationBell";
 
 type ViewMode = "grid" | "list";
-type FilterTab =
-  | "all"
-  | "module1"
-  | "module2"
-  | "module3"
-  | "module4"
-  | "module5";
+type FilterTab = "all" | "prompts" | "entries" | "charges" | "review";
 
-interface Lesson {
+interface Assessment {
   id: string;
   title: string;
   time: string;
@@ -20,45 +14,35 @@ interface Lesson {
   duration?: string;
 }
 
-const Lessons: React.FC = () => {
+const Assessments: React.FC = () => {
   const router = useIonRouter();
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
-  const [activeFilter, setActiveFilter] = useState<FilterTab>("all");
 
-  const lessons: Lesson[] = [
+  const assessments: Assessment[] = [
     {
       id: "1",
-      title: "Celebrate like a kid",
-      time: "Today 8-pm",
-      details: "Lesson details here",
+      title: "1st Assessment",
+      time: "Assessment details here",
+      details: "Write your reflections",
     },
     {
       id: "2",
-      title: "Celebrate like a kid",
-      time: "Today 8-pm",
-      details: "Lesson details here",
+      title: "2nd Assessment",
+      time: "Assessment details here",
+      details: "Write your reflections",
     },
     {
       id: "3",
-      title: "Celebrate like a kid",
-      time: "Today 8-pm",
-      details: "Lesson details here",
+      title: "3rd Assessment",
+      time: "Assessment details here",
+      details: "Write your reflections",
     },
     {
       id: "4",
-      title: "Celebrate like a kid",
-      time: "Today 8-pm",
-      details: "Lesson details here",
+      title: "4th Assessment",
+      time: "Assessment details here",
+      details: "Write your reflections",
     },
-  ];
-
-  const filters: { id: FilterTab; label: string }[] = [
-    { id: "all", label: "All lessons" },
-    { id: "module1", label: "Module 1" },
-    { id: "module2", label: "Module 2" },
-    { id: "module3", label: "Module 3" },
-    { id: "module4", label: "Module 4" },
-    { id: "module5", label: "Module 5" },
   ];
 
   return (
@@ -77,7 +61,7 @@ const Lessons: React.FC = () => {
           <div className="bg-white mt-6 px-6 w-full h-full pb-12">
             <div className="flex flex-row justify-between items-center pt-2">
               <div className="text-[#282828] text-base font-bold font-roboto">
-                Lessons
+                Assessments
               </div>
               <div className="flex items-center justify-end gap-2">
                 <button
@@ -103,26 +87,9 @@ const Lessons: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex gap-1 overflow-x-auto mt-4 pb-2 hide-scrollbar">
-              {filters.map((filter) => (
-                <button
-                  key={filter.id}
-                  type="button"
-                  onClick={() => setActiveFilter(filter.id)}
-                  className={`px-2 py-2 rounded-lg text-sm font-bold font-roboto whitespace-nowrap transition-colors shrink-0 ${
-                    activeFilter === filter.id
-                      ? "bg-[#F2F2F2] text-[#282828]"
-                      : "bg-transparent text-[#282828]"
-                  }`}
-                >
-                  {filter.label}
-                </button>
-              ))}
-            </div>
-
             {viewMode === "grid" ? (
               <div className="grid grid-cols-2 gap-4">
-                {lessons.map((lesson, idx) => (
+                {assessments.map((assessment, idx) => (
                   <div key={idx} className="px-1 mt-5">
                     <div className="rounded-xl bg-[#4C1534] text-white">
                       <div className="h-[120px] w-[170px] rounded-xl mb-2"></div>
@@ -131,11 +98,11 @@ const Lessons: React.FC = () => {
                       <img src="/assets/icon/video.png" alt="video" />
 
                       <span className="text-[13px] font-bold text-[#282828] font-roboto">
-                        {lesson.title}
+                        {assessment.title}
                       </span>
                     </div>
                     <p className="text-xs font-normal text-[#282828] font-roboto ml-1">
-                      {lesson.time}
+                      {assessment.time}
                     </p>
                     <p className="text-[11px] font-normal text-[#585858] font-roboto ml-1">
                       Lesson details here
@@ -144,23 +111,23 @@ const Lessons: React.FC = () => {
                 ))}
               </div>
             ) : (
-              <div className="flex flex-col">
-                {lessons.map((lesson, index) => (
+              <div className="flex flex-col mt-4">
+                {assessments.map((assessment, index) => (
                   <button
-                    key={lesson.id}
+                    key={assessment.id}
                     type="button"
                     className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50"
                   >
                     <div className="w-6 h-6 rounded-[4px] bg-[#4A0F28] shrink-0" />
                     <div className="flex flex-row justify-between w-full items-center">
                       <div className="text-xs font-normal text-[#282828] font-roboto">
-                        Lesson {index + 1} - Title here
+                        assessment {index + 1} - Title here
                       </div>
                       <div className="text-xs font-normal text-[#282828] font-roboto">
                         Details
                       </div>
                       <div className="text-xs font-normal text-[#282828] font-robotos">
-                        {lesson.duration || "10:15 mins"}
+                        {assessment.duration || "10:15 mins"}
                       </div>
                     </div>
                   </button>
@@ -174,4 +141,4 @@ const Lessons: React.FC = () => {
   );
 };
 
-export default Lessons;
+export default Assessments;

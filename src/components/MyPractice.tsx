@@ -41,6 +41,8 @@ const MyPractice: React.FC<MyPracticeProps> = ({ kind }) => {
   const handleTitleClick = () => {
     if (kind === "lesson") {
       router.push("/tabs/mystuff/lessons", "forward", "push");
+    } else if (kind === "assessment") {
+      router.push("/tabs/mystuff/assessment", "forward", "push");
     }
     // Add navigation for other kinds if needed
   };
@@ -73,14 +75,14 @@ const MyPractice: React.FC<MyPracticeProps> = ({ kind }) => {
               ) : (
                 <img src="/assets/icon/video.png" alt="video" />
               )}
-              <span className="text-sm font-bold text-[#282828] font-roboto">
+              <span className="text-[13px] font-bold text-[#282828] font-roboto">
                 {video.title}
               </span>
             </div>
             <p className="text-xs font-normal text-[#282828] font-roboto ml-1">
               {video.time}
             </p>
-            <p className="text-xs font-normal text-[#585858] font-roboto ml-1">
+            <p className="text-[11px] font-normal text-[#585858] font-roboto ml-1">
               Lesson details here
             </p>
           </div>

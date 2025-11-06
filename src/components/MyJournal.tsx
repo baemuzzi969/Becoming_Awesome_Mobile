@@ -1,17 +1,27 @@
 import React from "react";
+import { useIonRouter } from "@ionic/react";
 
 const MyJournal: React.FC = () => {
+  const router = useIonRouter();
+
+  const handleTitleClick = () => {
+    router.push("/tabs/mystuff/journal", "forward", "push");
+  };
+
   return (
     <div className="pt-3">
       <div className="flex flex-row items-center gap-3">
-        <div className="text-base font-bold font-roboto text-[#282828]">
-          My Journal
-        </div>
-        <img
-          src="/assets/icon/vector.png"
-          alt="vector"
-          className="w-2 h-3 mt-1"
-        />
+        <button
+          className="flex flex-row items-center gap-3 text-base font-bold font-roboto text-[#282828]"
+          onClick={handleTitleClick}
+        >
+          MyJournal
+          <img
+            src="/assets/icon/vector.png"
+            alt="vector"
+            className="w-2 h-3 mt-1"
+          />
+        </button>
       </div>
       <div className="flex flex-row items-center gap-3 mt-3">
         <div className="text-base font-bold font-roboto text-[#282828]">
@@ -26,11 +36,11 @@ const MyJournal: React.FC = () => {
       <div className="mt-2">
         <div className="flex flex-col bg-[#F2F2F2] rounded-2xl w-full h-fit p-3">
           <div className="flex flex-row justify-between">
-            <div className="text-[#282828] font-medium font-roboto text-lg">
+            <div className="text-[#282828] font-medium font-roboto text-base">
               Title here
             </div>
             <div className="flex flex-row gap-3 items-center">
-              <div className="text-sm font-normal font-roboto text-white px-2 py-[2px] bg-[#8E185A] rounded-2xl">
+              <div className="text-xs font-normal font-roboto text-white px-2 py-[2px] bg-[#8E185A] rounded-2xl">
                 Lesson Prompts
               </div>
               <img
@@ -45,11 +55,11 @@ const MyJournal: React.FC = () => {
               />
             </div>
           </div>
-          <div className="mt-2 text-[#282828] font-normal font-roboto text-base">
+          <div className="mt-2 text-[#282828] font-normal font-roboto text-sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore
           </div>
-          <div className="mt-2 text-[#585858] text-sm font-normal font-roboto">
+          <div className="mt-2 text-[#585858] text-xs font-normal font-roboto">
             June 27, 2025
           </div>
         </div>

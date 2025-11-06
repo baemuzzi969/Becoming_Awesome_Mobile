@@ -24,6 +24,8 @@ import Assessment from "./myprogram/Assessment";
 import StartAssessment from "./myprogram/StartAssessment";
 import Home from "./mystuff/Home";
 import Lessons from "./mystuff/Lessons";
+import Assessments from "./mystuff/Assessments";
+import Journals from "./mystuff/Journals";
 
 const Tabs: React.FC = () => {
   return (
@@ -55,6 +57,8 @@ const Tabs: React.FC = () => {
         />
         <Route exact path="/tabs/mystuff/home" component={Home} />
         <Route exact path="/tabs/mystuff/lessons" component={Lessons} />
+        <Route exact path="/tabs/mystuff/assessment" component={Assessments} />
+        <Route exact path="/tabs/mystuff/journal" component={Journals} />
         <Route exact path="/tabs/program">
           <Redirect to="/tabs/program/welcome" />
         </Route>
