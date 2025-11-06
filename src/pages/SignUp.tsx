@@ -48,6 +48,8 @@ const SignUp: React.FC = () => {
 
     // If validation passes, proceed with signup
     console.log("Signing up with:", { username, email, password });
+
+    router.push("/profile");
   };
 
   const handleGoogleSignIn = () => {
@@ -61,7 +63,7 @@ const SignUp: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <div className="max-w-[430px] h-full mx-auto pt-16 overflow-y-auto relative">
+        <div className="max-w-[430px] mx-auto pt-16 overflow-y-auto relative">
           <Header />
           <div className="flex flex-row items-center px-6">
             <div className="w-12 h-12 rounded bg-[#282828]"></div>
@@ -69,7 +71,7 @@ const SignUp: React.FC = () => {
               Ascension App
             </div>
           </div>
-          <div className=" bg-white mt-6 rounded-t-3xl px-6 h-full">
+          <div className=" bg-white mt-6 rounded-t-3xl px-6 h-[calc(100vh-136px)]">
             <div className="flex justify-center text-2xl pt-6 text-[#282828] font-bold">
               Create your account
             </div>
@@ -143,7 +145,10 @@ const SignUp: React.FC = () => {
                     onChange={(e) => {
                       setPassword(e.target.value);
                       if (errors.password) {
-                        setErrors((prev) => ({ ...prev, password: undefined }));
+                        setErrors((prev) => ({
+                          ...prev,
+                          password: undefined,
+                        }));
                       }
                     }}
                   />

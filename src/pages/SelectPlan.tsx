@@ -24,7 +24,7 @@ const SelectPlan: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <div className="max-w-[430px] h-full mx-auto pt-16 overflow-y-auto relative">
+        <div className="max-w-[430px] mx-auto pt-16 overflow-y-auto relative">
           <Header />
 
           <div className="flex flex-row items-center px-6">
@@ -39,22 +39,51 @@ const SelectPlan: React.FC = () => {
               Select a plan to begin your journey
             </div>
             <div className="mt-6">
-              <label className="flex items-center justify-between py-4 border-t border-[#A9A9A9]">
+              <label className="flex items-center justify-between py-4 border-t border-[#A9A9A9] cursor-pointer">
                 <div>
-                  <div className="text-sm font-bold font-roboto  text-[#282828]">
+                  <div className="text-sm font-bold font-roboto text-[#282828]">
                     Free
                   </div>
                 </div>
+
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="plan"
                   value="free"
                   checked={plan === "free"}
                   onChange={() => setPlan("free")}
-                  className="w-6 h-6 appearance-none border border-[#282828] rounded-full checked:bg-[#282828] relative
-                    after:content-['✔'] after:hidden after:text-white after:absolute after:text-sm after:top-[1px] after:left-[5px]
-                    checked:after:block cursor-pointer"
+                  className="sr-only"
+                  id="plan-free"
                 />
+
+                <span
+                  className={
+                    "w-6 h-6 rounded-full border border-[#282828] flex items-center justify-center " +
+                    (plan === "free" ? "bg-[#282828]" : "bg-transparent")
+                  }
+                  aria-hidden="true"
+                  onClick={() => setPlan("free")}
+                >
+                  {plan === "free" && (
+                    <svg
+                      width="10"
+                      height="8"
+                      viewBox="0 0 12 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M1 5.5L4.5 9L11 1"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                </span>
               </label>
 
               <label className="flex items-center justify-between py-4 border-t border-[#A9A9A9]">
@@ -67,15 +96,42 @@ const SelectPlan: React.FC = () => {
                   </div>
                 </div>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="plan"
                   value="monthly"
                   checked={plan === "monthly"}
                   onChange={() => setPlan("monthly")}
-                  className="w-6 h-6 appearance-none border border-[#282828] rounded-full checked:bg-[#282828] relative
-                    after:content-['✔'] after:hidden after:text-white after:absolute after:text-sm after:top-[1px] after:left-[5px]
-                    checked:after:block cursor-pointer"
+                  className="sr-only"
+                  id="plan-monthly"
                 />
+                <span
+                  className={
+                    "w-6 h-6 rounded-full border border-[#282828] flex items-center justify-center " +
+                    (plan === "monthly" ? "bg-[#282828]" : "bg-transparent")
+                  }
+                  aria-hidden="true"
+                  onClick={() => setPlan("monthly")}
+                >
+                  {plan === "monthly" && (
+                    <svg
+                      width="10"
+                      height="8"
+                      viewBox="0 0 12 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M1 5.5L4.5 9L11 1"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                </span>
               </label>
 
               <label className="flex items-center justify-between py-4 border-t border-[#A9A9A9]">
@@ -88,15 +144,42 @@ const SelectPlan: React.FC = () => {
                   </div>
                 </div>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="plan"
                   value="six"
                   checked={plan === "six"}
                   onChange={() => setPlan("six")}
-                  className="w-6 h-6 appearance-none border border-[#282828] rounded-full checked:bg-[#282828] relative
-                    after:content-['✔'] after:hidden after:text-white after:absolute after:text-sm after:top-[1px] after:left-[5px]
-                    checked:after:block cursor-pointer"
+                  className="sr-only"
+                  id="plan-six"
                 />
+                <span
+                  className={
+                    "w-6 h-6 rounded-full border border-[#282828] flex items-center justify-center " +
+                    (plan === "six" ? "bg-[#282828]" : "bg-transparent")
+                  }
+                  aria-hidden="true"
+                  onClick={() => setPlan("six")}
+                >
+                  {plan === "six" && (
+                    <svg
+                      width="10"
+                      height="8"
+                      viewBox="0 0 12 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M1 5.5L4.5 9L11 1"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                </span>
               </label>
 
               <div className="border-t border-[#A9A9A9] py-4">

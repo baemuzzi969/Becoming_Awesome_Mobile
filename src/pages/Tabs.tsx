@@ -11,10 +11,19 @@ import { Route, Redirect } from "react-router";
 import { heart, albums, person } from "ionicons/icons";
 
 // Tab pages
-import Welcome from "./onboarding/Welcome";
-import Description from "./onboarding/Description";
-import Background from "./onboarding/Background";
-import Activation from "./onboarding/Activation";
+import Welcome from "./myprogram/Welcome";
+import Description from "./myprogram/Description";
+import Background from "./myprogram/Background";
+import Activation from "./myprogram/Activation";
+import Celebrate from "./myprogram/Celebrate";
+import Features from "./myprogram/Features";
+import Tutorial from "./myprogram/Tutorial";
+import Introduction from "./myprogram/Introduction";
+import Ascension from "./myprogram/Ascension";
+import Assessment from "./myprogram/Assessment";
+import StartAssessment from "./myprogram/StartAssessment";
+import Home from "./mystuff/Home";
+import Lessons from "./mystuff/Lessons";
 
 const Tabs: React.FC = () => {
   return (
@@ -24,11 +33,33 @@ const Tabs: React.FC = () => {
         <Route exact path="/tabs/program/description" component={Description} />
         <Route exact path="/tabs/program/background" component={Background} />
         <Route exact path="/tabs/program/activation" component={Activation} />
-        <Route exact path="/tabs">
-          <Redirect to="/tabs/program/welcome" />
-        </Route>
+        <Route exact path="/tabs/program/celebrate" component={Celebrate} />
+        <Route exact path="/tabs/program/features" component={Features} />
+        <Route exact path="/tabs/program/tutorial" component={Tutorial} />
+        <Route exact path="/tabs/program/ascension" component={Ascension} />
+        <Route exact path="/tabs/program/assessment" component={Assessment} />
+        <Route
+          exact
+          path="/tabs/program/start-assessment"
+          component={StartAssessment}
+        />
+        <Route
+          exact
+          path="/tabs/program/start-assessment"
+          component={StartAssessment}
+        />
+        <Route
+          exact
+          path="/tabs/program/introduction"
+          component={Introduction}
+        />
+        <Route exact path="/tabs/mystuff/home" component={Home} />
+        <Route exact path="/tabs/mystuff/lessons" component={Lessons} />
         <Route exact path="/tabs/program">
           <Redirect to="/tabs/program/welcome" />
+        </Route>
+        <Route exact path="/tabs/mystuff">
+          <Redirect to="/tabs/mystuff/home" />
         </Route>
       </IonRouterOutlet>
 

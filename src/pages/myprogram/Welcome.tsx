@@ -2,23 +2,22 @@ import React from "react";
 import { IonContent, IonPage, useIonRouter } from "@ionic/react";
 import Header from "../../components/Header";
 import Event from "../../components/Event";
+import NotificationBell from "../../components/NotificationBell";
 
-const Description: React.FC = () => {
+const Welcome: React.FC = () => {
   const router = useIonRouter();
 
   return (
     <IonPage>
       <IonContent>
-        <div className="max-w-[430px] h-full mx-auto pt-16">
+        <div className="max-w-[430px] mx-auto pt-16 ">
           <Header />
 
           <div className="flex flex-row w-full justify-between items-center px-6">
             <div className="text-2xl font-bold text-[#282828] font-roboto">
               Ascension App
             </div>
-            <div className="px-[14px] py-3 bg-white rounded-xl">
-              <img src="/assets/icon/alarm.png" alt="alarm" />
-            </div>
+            <NotificationBell count={1} />
           </div>
           <div className="px-6 mt-3">
             <div className="text-sm font-bold font-roboto">
@@ -75,15 +74,14 @@ const Description: React.FC = () => {
                 <button
                   onClick={() => {
                     router.push(
-                      "/tabs/program/background",
+                      "/tabs/program/description",
                       "forward",
                       "replace"
                     );
                   }}
-                  className="flex flex-row items-center gap-2 min-w-[200px] mt-6 rounded-xl p-4 text-white font-medium text-sm button-gradient"
+                  className="w-3/4 mt-6 rounded-xl p-4 text-white font-medium text-sm button-gradient"
                 >
-                  <img src="/assets/icon/video-play.png" alt="play" />
-                  <span>Welcome to Becoming Awesome</span>
+                  Continue
                 </button>
               </div>
             </div>
@@ -95,4 +93,4 @@ const Description: React.FC = () => {
   );
 };
 
-export default Description;
+export default Welcome;

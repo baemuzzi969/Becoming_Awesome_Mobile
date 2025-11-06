@@ -65,3 +65,13 @@ ion-tab-button.tab-selected ion-icon {
 ion-tab-button.tab-selected ion-label {
   color: #4c1543;
 }
+
+/* Hide scrollbar for filter tabs */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

@@ -121,7 +121,7 @@ const PaymentDetail: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <div className="max-w-[430px] h-full mx-auto pt-16 overflow-y-auto relative">
+        <div className="max-w-[430px] mx-auto pt-16 overflow-y-auto relative">
           <Header />
 
           <div className="flex flex-row items-center px-6">

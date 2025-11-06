@@ -2,23 +2,22 @@ import React from "react";
 import { IonContent, IonPage, useIonRouter } from "@ionic/react";
 import Header from "../../components/Header";
 import Event from "../../components/Event";
+import NotificationBell from "../../components/NotificationBell";
 
-const Welcome: React.FC = () => {
+const Background: React.FC = () => {
   const router = useIonRouter();
 
   return (
     <IonPage>
       <IonContent>
-        <div className="max-w-[430px] h-full mx-auto pt-16 ">
+        <div className="max-w-[430px] mx-auto pt-16">
           <Header />
 
           <div className="flex flex-row w-full justify-between items-center px-6">
             <div className="text-2xl font-bold text-[#282828] font-roboto">
               Ascension App
             </div>
-            <div className="px-[14px] py-3 bg-white rounded-xl">
-              <img src="/assets/icon/alarm.png" alt="alarm" />
-            </div>
+            <NotificationBell count={1} />
           </div>
           <div className="px-6 mt-3">
             <div className="text-sm font-bold font-roboto">
@@ -43,47 +42,34 @@ const Welcome: React.FC = () => {
             <div className="flex flex-col justify-between min-h-[400px] mt-5 border border-solid border-[#A9A9A9] rounded-xl p-3">
               <div className="text-xs text-[#282828] font-normal font-roboto">
                 <span>
-                  I’m pleased to meet you, [Name] <br />
+                  [Name], would you like to review Peter’s and Tracy’s resume?
+                  simply click the buttons below to take a look.
                   <br />
-                </span>
-                <span>
-                  I’m Angelica your A.I Ascension guide. I’ll be working with
-                  Peter, Tracey and the rest of Becoming Awesome Team to support
-                  your journey with us. I’ll lead you through each step of your
-                  program; I’ll also be offering reminders and I’ll suggest your
-                  next steps to take in your program path.
-                  <br />
-                  <br />
-                </span>
-                <span>
-                  I’ll help you set up your personalized Daily Practice
-                  routine—engaging in this practice 4 to 5 times per week is
-                  highly recommended especially if you’re thriving foe
-                  significant leaps in consciousness. <br />
-                  <br />
-                </span>
-                <span>
-                  Your home screen is My Program. This is where you’ll track
-                  your progress and see recommendations for what’s next{" "}
-                  <br></br>
                 </span>
               </div>
 
               <div className="flex flex-col items-end w-full">
                 <div className="w-full border-t border-[#A9A9A9]"></div>
-
-                <button
-                  onClick={() => {
-                    router.push(
-                      "/tabs/program/description",
-                      "forward",
-                      "replace"
-                    );
-                  }}
-                  className="w-3/4 mt-6 rounded-xl p-4 text-white font-medium text-sm button-gradient"
-                >
-                  Continue
-                </button>
+                <div className="flex flex-row gap-4">
+                  <button className="mt-6 rounded-xl px-1 py-4 text-[#282828] font-medium text-sm bg-white border border-solid border-[#282828]">
+                    Peter's Background
+                  </button>
+                  <button className="mt-6 rounded-xl px-1 py-4 text-[#282828] font-medium text-sm bg-white border border-solid border-[#282828]">
+                    Tracy's Background
+                  </button>
+                  <button
+                    onClick={() => {
+                      router.push(
+                        "/tabs/program/activation",
+                        "forward",
+                        "replace"
+                      );
+                    }}
+                    className="mt-6 rounded-xl px-3 py-4 text-white font-medium text-sm button-gradient"
+                  >
+                    Next
+                  </button>
+                </div>
               </div>
             </div>
             <Event />
@@ -94,4 +80,4 @@ const Welcome: React.FC = () => {
   );
 };
 
-export default Welcome;
+export default Background;
