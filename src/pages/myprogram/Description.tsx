@@ -1,11 +1,13 @@
-import React from "react";
-import { IonContent, IonPage, useIonRouter } from "@ionic/react";
+import React, { useState } from "react";
+import { IonContent, IonPage, useIonRouter, IonModal } from "@ionic/react";
 import Header from "../../components/Header";
 import Event from "../../components/Event";
 import NotificationBell from "../../components/NotificationBell";
+import CustomVideoPlayer from "../../components/CustomVideoPlayer";
 
 const Description: React.FC = () => {
   const router = useIonRouter();
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
     <IonPage>
@@ -72,13 +74,7 @@ const Description: React.FC = () => {
                 <div className="w-full border-t border-[#A9A9A9]"></div>
 
                 <button
-                  onClick={() => {
-                    router.push(
-                      "/tabs/program/background",
-                      "forward",
-                      "replace"
-                    );
-                  }}
+                  onClick={() => setIsVideoOpen(true)}
                   className="flex flex-row items-center gap-2 min-w-[200px] mt-6 rounded-xl p-4 text-white font-medium text-sm button-gradient"
                 >
                   <img src="/assets/icon/video-play.png" alt="play" />
@@ -89,6 +85,21 @@ const Description: React.FC = () => {
             <Event />
           </div>
         </div>
+
+        <IonModal
+          isOpen={isVideoOpen}
+          onDidDismiss={() => setIsVideoOpen(false)}
+          className="video-modal"
+        >
+          <div className="w-full h-full">
+            <CustomVideoPlayer
+              src="https://becomingawesome.s3.us-east-2.amazonaws.com/mov_bbb.mp4"
+              title={"Lesson no. - Welcome to Becoming Awesome"}
+              poster={"/assets/img/welcome-poster.jpg"}
+              onClose={() => setIsVideoOpen(false)}
+            />
+          </div>
+        </IonModal>
       </IonContent>
     </IonPage>
   );
