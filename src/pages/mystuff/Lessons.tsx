@@ -146,11 +146,7 @@ const Lessons: React.FC = () => {
             ) : (
               <div className="flex flex-col">
                 {lessons.map((lesson, index) => (
-                  <button
-                    key={lesson.id}
-                    type="button"
-                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50"
-                  >
+                  <div key={lesson.id} className="flex items-center gap-3 p-2">
                     <div className="w-6 h-6 rounded-[4px] bg-[#4A0F28] shrink-0" />
                     <div className="flex flex-row justify-between w-full items-center">
                       <div className="text-xs font-normal text-[#282828] font-roboto">
@@ -163,7 +159,7 @@ const Lessons: React.FC = () => {
                         {lesson.duration || "10:15 mins"}
                       </div>
                     </div>
-                  </button>
+                  </div>
                 ))}
               </div>
             )}

@@ -26,6 +26,8 @@ import Home from "./mystuff/Home";
 import Lessons from "./mystuff/Lessons";
 import Assessments from "./mystuff/Assessments";
 import Journals from "./mystuff/Journals";
+import Settings from "./profile/Settings";
+import Notifications from "./Notifications";
 
 const Tabs: React.FC = () => {
   return (
@@ -59,11 +61,16 @@ const Tabs: React.FC = () => {
         <Route exact path="/tabs/mystuff/lessons" component={Lessons} />
         <Route exact path="/tabs/mystuff/assessment" component={Assessments} />
         <Route exact path="/tabs/mystuff/journal" component={Journals} />
+        <Route exact path="/tabs/profile/setting" component={Settings} />
+        <Route exact path="/tabs/notifications" component={Notifications} />
         <Route exact path="/tabs/program">
           <Redirect to="/tabs/program/welcome" />
         </Route>
         <Route exact path="/tabs/mystuff">
           <Redirect to="/tabs/mystuff/home" />
+        </Route>
+        <Route exact path="/tabs/profile">
+          <Redirect to="/tabs/profile/setting" />
         </Route>
       </IonRouterOutlet>
 

@@ -12,10 +12,10 @@ const Event: React.FC = () => {
             <img src="/assets/icon/calendar.png" alt="calendar" />
             <div className="text-base font-medium font-roboto">Today</div>
           </div>
-          <div className="ml-[6px] mt-3 text-base font-normal text-[#282828]">
+          <div className="ml-[6px] mt-2 text-sm font-normal text-[#282828]">
             Announcement title here
           </div>
-          <div className="ml-[6px] mt-1 text-sm font-normal text-[#585858]">
+          <div className="ml-[6px] mt-1 text-xs font-normal text-[#585858]">
             Details here
           </div>
         </div>
@@ -26,10 +26,10 @@ const Event: React.FC = () => {
             <img src="/assets/icon/calendar.png" alt="calendar" />
             <div className="text-base font-medium font-roboto">Today</div>
           </div>
-          <div className="ml-[6px] mt-3 text-base font-normal text-[#282828]">
+          <div className="ml-[6px] mt-2 text-sm font-normal text-[#282828]">
             Announcement title here
           </div>
-          <div className="ml-[6px] mt-1 text-sm font-normal text-[#585858]">
+          <div className="ml-[6px] mt-1 text-xs font-normal text-[#585858]">
             Details here
           </div>
         </div>
@@ -40,10 +40,10 @@ const Event: React.FC = () => {
             <img src="/assets/icon/calendar.png" alt="calendar" />
             <div className="text-base font-medium font-roboto">Today</div>
           </div>
-          <div className="ml-[6px] mt-3 text-base font-normal text-[#282828]">
+          <div className="ml-[6px] mt-2 text-sm font-normal text-[#282828]">
             Announcement title here
           </div>
-          <div className="ml-[6px] mt-1 text-sm font-normal text-[#585858]">
+          <div className="ml-[6px] mt-1 text-xs font-normal text-[#585858]">
             Details here
           </div>
         </div>

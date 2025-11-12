@@ -44,29 +44,24 @@ const Description: React.FC = () => {
             <div className="flex flex-col justify-between min-h-[400px] mt-5 border border-solid border-[#A9A9A9] rounded-xl p-3">
               <div className="text-xs text-[#282828] font-normal font-roboto">
                 <span>
-                  I’m pleased to meet you, [Name] <br />
-                  <br />
-                </span>
-                <span>
-                  I’m Angelica your A.I Ascension guide. I’ll be working with
-                  Peter, Tracey and the rest of Becoming Awesome Team to support
-                  your journey with us. I’ll lead you through each step of your
-                  program; I’ll also be offering reminders and I’ll suggest your
-                  next steps to take in your program path.
+                  Get ready to gently expand your awareness and connect deeply.
+                  We'll explain everything as you go through our 3-level
+                  program, starting with foundational skills.
                   <br />
                   <br />
                 </span>
                 <span>
-                  I’ll help you set up your personalized Daily Practice
-                  routine—engaging in this practice 4 to 5 times per week is
-                  highly recommended especially if you’re thriving foe
-                  significant leaps in consciousness. <br />
+                  Your AI guide, Angelica, is here to help as you go at your own
+                  pace. Regular practice can lead to feeling lighter, more
+                  present, and joyful, with a growing spiritual connection.
+                  <br />
                   <br />
                 </span>
                 <span>
-                  Your home screen is My Program. This is where you’ll track
-                  your progress and see recommendations for what’s next{" "}
-                  <br></br>
+                  Built on Peter & Tracy's deep experience, this app offers
+                  effective tools and direct energy transmissions to awaken your
+                  unique gifts. <br />
+                  <br />
                 </span>
               </div>
 

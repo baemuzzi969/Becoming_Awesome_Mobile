@@ -1,4 +1,5 @@
 import React from "react";
+import { useIonRouter } from "@ionic/react";
 
 type NotificationBellProps = {
   count?: number;
@@ -9,8 +10,18 @@ const NotificationBell: React.FC<NotificationBellProps> = ({
   count = 0,
   className,
 }) => {
+  const router = useIonRouter();
+
+  const handleClick = () => {
+    router.push("/tabs/notifications", "forward", "push");
+  };
+
   return (
-    <div className={`relative inline-block ${className ?? ""}`}>
+    <button
+      type="button"
+      onClick={handleClick}
+      className={`relative inline-block ${className ?? ""}`}
+    >
       <div className="px-[14px] py-3 bg-white rounded-xl">
         <img src="/assets/icon/alarm.png" alt="alarm" />
       </div>
@@ -19,7 +30,7 @@ const NotificationBell: React.FC<NotificationBellProps> = ({
           {count}
         </span>
       )}
-    </div>
+    </button>
   );
 };
 

@@ -65,23 +65,7 @@ const SelectPlan: React.FC = () => {
                   onClick={() => setPlan("free")}
                 >
                   {plan === "free" && (
-                    <svg
-                      width="10"
-                      height="8"
-                      viewBox="0 0 12 10"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <path
-                        d="M1 5.5L4.5 9L11 1"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <img src="/assets/icon/tick.png" alt="tick" />
                   )}
                 </span>
               </label>
@@ -113,23 +97,7 @@ const SelectPlan: React.FC = () => {
                   onClick={() => setPlan("monthly")}
                 >
                   {plan === "monthly" && (
-                    <svg
-                      width="10"
-                      height="8"
-                      viewBox="0 0 12 10"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <path
-                        d="M1 5.5L4.5 9L11 1"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <img src="/assets/icon/tick.png" alt="tick" />
                   )}
                 </span>
               </label>
@@ -161,23 +129,7 @@ const SelectPlan: React.FC = () => {
                   onClick={() => setPlan("six")}
                 >
                   {plan === "six" && (
-                    <svg
-                      width="10"
-                      height="8"
-                      viewBox="0 0 12 10"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <path
-                        d="M1 5.5L4.5 9L11 1"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <img src="/assets/icon/tick.png" alt="tick" />
                   )}
                 </span>
               </label>

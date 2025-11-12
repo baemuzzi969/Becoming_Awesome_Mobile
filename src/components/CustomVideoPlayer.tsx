@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import DownloadDialog from "./DownloadDialog";
+import FeedbackDialog from "./FeedbackDialog";
 
 type Props = {
   src: string;
@@ -30,6 +32,8 @@ const CustomVideoPlayer: React.FC<Props> = ({
   const [duration, setDuration] = useState(0);
   const [seeking, setSeeking] = useState(false);
   const [bufferedEnd, setBufferedEnd] = useState(0);
+  const [showDownload, setShowDownload] = useState(false);
+  const [showFeedback, setShowFeedback] = useState(false);
   const progressRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -153,13 +157,19 @@ const CustomVideoPlayer: React.FC<Props> = ({
     }
   };
 
-  const download = () => {
-    const a = document.createElement("a");
-    a.href = src;
-    a.download = src.split("/").pop() || "video.mp4";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
+  const handleDownload = (kind: "video" | "transcript" | "both") => {
+    if (kind === "video" || kind === "both") {
+      const a = document.createElement("a");
+      a.href = src;
+      a.download = src.split("/").pop() || "video.mp4";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+    if (kind === "transcript" || kind === "both") {
+      // TODO: wire transcript URL if/when available
+      // console.log("Download transcript");
+    }
   };
 
   useEffect(() => {
@@ -171,7 +181,7 @@ const CustomVideoPlayer: React.FC<Props> = ({
   }, []);
 
   return (
-    <div className="w-full h-full flex flex-col bg-black text-white">
+    <div className="w-full h-full max-w-[430px] flex flex-col bg-black text-white">
       <div className="flex-shrink-0 p-4">
         <div className="flex flex-row justify-between items-center mt-11">
           <button onClick={() => onClose?.()} className="p-2 invisible">
@@ -274,7 +284,11 @@ const CustomVideoPlayer: React.FC<Props> = ({
               Journal
             </div>
           </div>
-          <div className="flex flex-col items-center" onClick={download}>
+          <button
+            type="button"
+            onClick={() => setShowDownload(true)}
+            className="flex flex-col items-center"
+          >
             <img
               src="/assets/icon/download-video.png"
               alt="download"
@@ -283,7 +297,7 @@ const CustomVideoPlayer: React.FC<Props> = ({
             <span className="text-white text-[10px] font-normal font-roboto mt-2">
               Download
             </span>
-          </div>
+          </button>
           <div className="flex flex-col items-center">
             <img
               src="/assets/icon/star.png"
@@ -294,7 +308,11 @@ const CustomVideoPlayer: React.FC<Props> = ({
               MyPractice
             </div>
           </div>
-          <div className="flex flex-col items-center">
+          <button
+            type="button"
+            onClick={() => setShowFeedback(true)}
+            className="flex flex-col items-center"
+          >
             <img
               src="/assets/icon/send-video.png"
               alt="send"
@@ -303,7 +321,7 @@ const CustomVideoPlayer: React.FC<Props> = ({
             <div className="text-white text-[10px] font-normal font-roboto mt-2">
               Feedback
             </div>
-          </div>
+          </button>
           <div className="flex flex-col items-center">
             <img
               src="/assets/icon/bookmark-video.png"
@@ -316,6 +334,21 @@ const CustomVideoPlayer: React.FC<Props> = ({
           </div>
         </div>
       </div>
+
+      <DownloadDialog
+        isOpen={showDownload}
+        onClose={() => setShowDownload(false)}
+        onDownload={handleDownload}
+      />
+
+      <FeedbackDialog
+        isOpen={showFeedback}
+        onClose={() => setShowFeedback(false)}
+        onSubmit={(feedback) => {
+          // TODO: Handle feedback submission
+          console.log("Feedback submitted:", feedback);
+        }}
+      />
     </div>
   );
 };
