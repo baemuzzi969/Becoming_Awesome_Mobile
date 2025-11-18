@@ -80,7 +80,7 @@ const FeedbackDialog: React.FC<Props> = ({ isOpen, onClose, onSubmit }) => {
       >
         <div className="flex flex-col">
           <div className="px-6 pt-6 pb-4 text-center">
-            <span className="text-xl font-bold text-[#282828] font-roboto">
+            <span className="text-xl font-bold text-[#282828] font-robotoBold">
               Share us your feedback
             </span>
           </div>
@@ -90,18 +90,18 @@ const FeedbackDialog: React.FC<Props> = ({ isOpen, onClose, onSubmit }) => {
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               placeholder="Describe your experience here"
-              className="w-full min-h-[200px] p-4 border border-[#A9A9A9] rounded-lg resize-none focus:outline-none focus:border-[#282828] text-[#282828] font-roboto font-normal text-sm"
+              className="w-full min-h-[200px] p-4 border border-[#A9A9A9] rounded-lg resize-none focus:outline-none focus:border-[#282828] text-[#282828] font-robotoNormal font-normal text-sm"
             />
           </div>
 
           <div className="pb-4 text-center">
-            <span className="text-base text-[#282828] font-normal font-roboto">
+            <span className="text-base text-[#282828] font-normal font-robotoNormal">
               or
             </span>
           </div>
 
           <div className="px-6 pb-4 text-center">
-            <p className="text-sm text-[#282828] font-bold font-roboto">
+            <p className="text-sm text-[#282828] font-bold font-robotoBold">
               You can upload your written or video testimonials by clicking the
               button below
             </p>
@@ -114,7 +114,7 @@ const FeedbackDialog: React.FC<Props> = ({ isOpen, onClose, onSubmit }) => {
               className="flex items-center justify-center gap-2 py-3 px-4 bg-[#282828] rounded-lg transition-colors"
             >
               <img src="/assets/icon/upload.png" alt="upload" />
-              <span className="text-base text-white font-bold font-roboto">
+              <span className="text-base text-white font-bold font-robotoBold">
                 Upload video
               </span>
             </button>

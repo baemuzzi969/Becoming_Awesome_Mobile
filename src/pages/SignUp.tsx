@@ -67,21 +67,21 @@ const SignUp: React.FC = () => {
           <Header />
           <div className="flex flex-row items-center px-6">
             <div className="w-12 h-12 rounded bg-[#282828]"></div>
-            <div className="text-2xl font-bold ml-3 text-[#282828] font-roboto">
+            <div className="text-2xl font-bold ml-3 text-[#282828] font-robotoBold">
               Ascension App
             </div>
           </div>
           <div className=" bg-white mt-6 rounded-t-3xl px-6 h-[calc(100vh-136px)]">
-            <div className="flex justify-center text-2xl pt-6 text-[#282828] font-bold">
+            <div className="flex justify-center text-2xl pt-6 text-[#282828] font-bold font-robotoBold">
               Create your account
             </div>
-            <div className="flex justify-center text-sm text-[#282828] font-normal font-roboto">
+            <div className="flex justify-center text-sm text-[#282828] font-normal font-robotoNormal">
               Encouraging message here to join the program
             </div>
 
             <div className="space-y-4">
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Username
                 </span>
                 <input
@@ -106,7 +106,7 @@ const SignUp: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Email
                 </span>
                 <input
@@ -131,7 +131,7 @@ const SignUp: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Password
                 </span>
                 <div className="relative">
@@ -169,17 +169,17 @@ const SignUp: React.FC = () => {
                 )}
               </div>
 
-              <span className="text-sm font-normal font-roboto mt-2">
+              <span className="text-sm font-normal font-robotoNormal mt-2">
                 <a
                   href="#"
-                  className="text-sm text-[#282828] font-normal font-roboto underline"
+                  className="text-sm text-[#282828] font-normal font-robotoNormal underline"
                 >
                   Terms & conditions
                 </a>
               </span>
 
               <button
-                className="w-full mt-6 rounded-xl p-4 text-white font-medium font-roboto text-sm button-gradient"
+                className="w-full mt-6 rounded-xl p-4 text-white font-medium font-robotoMedium text-sm button-gradient"
                 onClick={handleSignup}
               >
                 Sign Up
@@ -205,7 +205,7 @@ const SignUp: React.FC = () => {
                   alt="Google"
                   className="w-5 h-5"
                 />
-                <span className="text-base font-medium font-roboto">
+                <span className="text-base font-medium font-robotoMedium">
                   Sign in with Google
                 </span>
               </button>
@@ -219,17 +219,17 @@ const SignUp: React.FC = () => {
                   alt="Apple"
                   className="w-5 h-5"
                 />
-                <span className="text-base font-medium font-roboto">
+                <span className="text-base font-medium font-robotoMedium">
                   Sign in with Apple
                 </span>
               </button>
 
               <div className="text-center mt-6 pb-12">
-                <div className="underline text-sm font-normal font-roboto">
+                <div className="underline text-sm font-normal font-robotoNormal">
                   Already have an account?{" "}
                   <span
                     onClick={() => router.push("/signin")}
-                    className="text-sm font-medium font-roboto"
+                    className="text-sm font-medium font-robotoMedium"
                   >
                     Sign In
                   </span>

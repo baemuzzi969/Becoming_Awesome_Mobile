@@ -126,7 +126,7 @@ const PaymentDetail: React.FC = () => {
 
           <div className="flex flex-row items-center px-6">
             <div className="w-12 h-12 rounded bg-[#282828]"></div>
-            <div className="text-2xl font-bold ml-3 text-[#282828] font-roboto">
+            <div className="text-2xl font-bold ml-3 text-[#282828] font-robotoBold">
               Ascension App
             </div>
           </div>
@@ -135,7 +135,7 @@ const PaymentDetail: React.FC = () => {
             <div className="flex justify-center text-2xl pt-6 text-[#282828] font-bold">
               Payment Details
             </div>
-            <div className="flex text-center text-sm text-[#282828] font-normal font-roboto">
+            <div className="flex text-center text-sm text-[#282828] font-normal font-robotoNormal">
               Update your payment method and address associated with your
               payment information
             </div>
@@ -150,7 +150,7 @@ const PaymentDetail: React.FC = () => {
 
             <div className="space-y-4">
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Card Number
                 </span>
                 <input
@@ -174,7 +174,7 @@ const PaymentDetail: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Expiration Date
                 </span>
                 <input
@@ -196,7 +196,7 @@ const PaymentDetail: React.FC = () => {
               </div>
 
               <div className="relative space-y-2">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Security Code
                 </span>
                 <input
@@ -230,7 +230,7 @@ const PaymentDetail: React.FC = () => {
               )}
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828]  font-normal font-roboto">
+                <span className="text-sm text-[#282828]  font-normal font-robotoNormal">
                   Name on payment method
                 </span>
                 <input
@@ -254,7 +254,7 @@ const PaymentDetail: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Billing address
                 </span>
                 <input
@@ -283,7 +283,7 @@ const PaymentDetail: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   City
                 </span>
                 <input
@@ -305,7 +305,7 @@ const PaymentDetail: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   State
                 </span>
                 <input
@@ -327,7 +327,7 @@ const PaymentDetail: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Zip
                 </span>
                 <input
@@ -349,7 +349,7 @@ const PaymentDetail: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Country
                 </span>
                 <input
@@ -373,7 +373,7 @@ const PaymentDetail: React.FC = () => {
 
             <div className="pb-12">
               <button
-                className="w-full mt-6 rounded-xl p-4 text-white font-medium font-roboto text-sm button-gradient"
+                className="w-full mt-6 rounded-xl p-4 text-white font-medium font-robotoMedium text-sm button-gradient"
                 onClick={handleContinue}
               >
                 Continue

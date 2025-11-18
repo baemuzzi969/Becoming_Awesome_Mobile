@@ -10,12 +10,12 @@ const Event: React.FC = () => {
         <div className="bg-[#F2F2F2] rounded-2xl p-3 mt-4">
           <div className="flex flex-row w-full items-center gap-2 ">
             <img src="/assets/icon/calendar.png" alt="calendar" />
-            <div className="text-base font-medium font-roboto">Today</div>
+            <div className="text-base font-medium font-robotoMedium">Today</div>
           </div>
-          <div className="ml-[6px] mt-2 text-sm font-normal text-[#282828]">
+          <div className="ml-[6px] mt-2 text-sm font-normal font-robotoNormal text-[#282828]">
             Announcement title here
           </div>
-          <div className="ml-[6px] mt-1 text-xs font-normal text-[#585858]">
+          <div className="ml-[6px] mt-1 text-xs font-normal font-robotoNormal text-[#585858]">
             Details here
           </div>
         </div>
@@ -24,12 +24,12 @@ const Event: React.FC = () => {
         <div className="bg-[#F2F2F2] rounded-2xl p-3 mt-4">
           <div className="flex flex-row w-full items-center gap-2 ">
             <img src="/assets/icon/calendar.png" alt="calendar" />
-            <div className="text-base font-medium font-roboto">Today</div>
+            <div className="text-base font-medium font-robotoMedium">Today</div>
           </div>
-          <div className="ml-[6px] mt-2 text-sm font-normal text-[#282828]">
+          <div className="ml-[6px] mt-2 text-sm font-normal font-robotoNormal text-[#282828]">
             Announcement title here
           </div>
-          <div className="ml-[6px] mt-1 text-xs font-normal text-[#585858]">
+          <div className="ml-[6px] mt-1 text-xs font-normal font-robotoNormal text-[#585858]">
             Details here
           </div>
         </div>
@@ -38,12 +38,12 @@ const Event: React.FC = () => {
         <div className="bg-[#F2F2F2] rounded-2xl p-3 mt-4">
           <div className="flex flex-row w-full items-center gap-2 ">
             <img src="/assets/icon/calendar.png" alt="calendar" />
-            <div className="text-base font-medium font-roboto">Today</div>
+            <div className="text-base font-medium font-robotoMedium">Today</div>
           </div>
-          <div className="ml-[6px] mt-2 text-sm font-normal text-[#282828]">
+          <div className="ml-[6px] mt-2 text-sm font-normal font-robotoNormal text-[#282828]">
             Announcement title here
           </div>
-          <div className="ml-[6px] mt-1 text-xs font-normal text-[#585858]">
+          <div className="ml-[6px] mt-1 text-xs font-normal font-robotoNormal text-[#585858]">
             Details here
           </div>
         </div>

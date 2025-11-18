@@ -31,7 +31,7 @@ const Notifications: React.FC = () => {
             <button type="button" onClick={() => router.goBack()}>
               <img src="/assets/icon/back.png" alt="back" />
             </button>
-            <div className="text-lg font-bold text-[#282828] font-roboto">
+            <div className="text-lg font-bold text-[#282828] font-robotoBold">
               Notifications
             </div>
           </div>
@@ -40,7 +40,7 @@ const Notifications: React.FC = () => {
 
           <div className="bg-white px-6 pb-12">
             {notifications.length === 0 ? (
-              <div className="text-center py-12 text-[#585858] font-roboto">
+              <div className="text-center py-12 text-[#585858] font-robotoBold">
                 No notifications
               </div>
             ) : (
@@ -52,7 +52,7 @@ const Notifications: React.FC = () => {
                   >
                     <div className="w-6 h-6 rounded bg-[#4A0F28] shrink-0" />
                     <div className="flex-1">
-                      <p className="text-xs text-[#282828] font-roboto">
+                      <p className="text-xs text-[#282828] font-robotoBold">
                         {notification.message}
                       </p>
                     </div>

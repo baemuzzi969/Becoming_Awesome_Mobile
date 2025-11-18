@@ -68,7 +68,7 @@ const Lessons: React.FC = () => {
           <Header />
 
           <div className="flex flex-row w-full justify-between items-center px-6">
-            <div className="text-2xl font-bold text-[#282828] font-roboto">
+            <div className="text-2xl font-bold text-[#282828] font-robotoBold">
               Ascension App
             </div>
             <NotificationBell count={1} />
@@ -76,7 +76,7 @@ const Lessons: React.FC = () => {
 
           <div className="bg-white mt-6 px-6 w-full h-full pb-12">
             <div className="flex flex-row justify-between items-center pt-2">
-              <div className="text-[#282828] text-base font-bold font-roboto">
+              <div className="text-[#282828] text-base font-bold font-robotoBold">
                 Lessons
               </div>
               <div className="flex items-center justify-end gap-2">
@@ -109,7 +109,7 @@ const Lessons: React.FC = () => {
                   key={filter.id}
                   type="button"
                   onClick={() => setActiveFilter(filter.id)}
-                  className={`px-2 py-2 rounded-lg text-sm font-bold font-roboto whitespace-nowrap transition-colors shrink-0 ${
+                  className={`px-2 py-2 rounded-lg text-sm font-bold font-robotoBold whitespace-nowrap transition-colors shrink-0 ${
                     activeFilter === filter.id
                       ? "bg-[#F2F2F2] text-[#282828]"
                       : "bg-transparent text-[#282828]"
@@ -130,14 +130,14 @@ const Lessons: React.FC = () => {
                     <div className="flex items-center gap-2 text-sm ml-1">
                       <img src="/assets/icon/video.png" alt="video" />
 
-                      <span className="text-[13px] font-bold text-[#282828] font-roboto">
+                      <span className="text-[13px] font-bold text-[#282828]">
                         {lesson.title}
                       </span>
                     </div>
-                    <p className="text-xs font-normal text-[#282828] font-roboto ml-1">
+                    <p className="text-xs font-normal font-robotoNormal text-[#282828] ml-1">
                       {lesson.time}
                     </p>
-                    <p className="text-[11px] font-normal text-[#585858] font-roboto ml-1">
+                    <p className="text-[11px] font-normal font-robotoNormal text-[#585858] ml-1">
                       Lesson details here
                     </p>
                   </div>
@@ -149,13 +149,13 @@ const Lessons: React.FC = () => {
                   <div key={lesson.id} className="flex items-center gap-3 p-2">
                     <div className="w-6 h-6 rounded-[4px] bg-[#4A0F28] shrink-0" />
                     <div className="flex flex-row justify-between w-full items-center">
-                      <div className="text-xs font-normal text-[#282828] font-roboto">
+                      <div className="text-xs font-normal font-robotoNormal text-[#282828]">
                         Lesson {index + 1} - Title here
                       </div>
-                      <div className="text-xs font-normal text-[#282828] font-roboto">
+                      <div className="text-xs font-normal font-robotoNormal text-[#282828]">
                         Details
                       </div>
-                      <div className="text-xs font-normal text-[#282828] font-robotos">
+                      <div className="text-xs font-normal font-robotoNormal text-[#282828]">
                         {lesson.duration || "10:15 mins"}
                       </div>
                     </div>

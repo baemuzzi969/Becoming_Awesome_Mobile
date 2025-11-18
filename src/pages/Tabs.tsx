@@ -27,7 +27,10 @@ import Lessons from "./mystuff/Lessons";
 import Assessments from "./mystuff/Assessments";
 import Journals from "./mystuff/Journals";
 import Settings from "./profile/Settings";
+import Downloads from "./profile/Downloads";
 import Notifications from "./Notifications";
+import Music from "./mystuff/Music";
+import BookMarks from "./mystuff/Bookmarks";
 
 const Tabs: React.FC = () => {
   return (
@@ -61,7 +64,10 @@ const Tabs: React.FC = () => {
         <Route exact path="/tabs/mystuff/lessons" component={Lessons} />
         <Route exact path="/tabs/mystuff/assessment" component={Assessments} />
         <Route exact path="/tabs/mystuff/journal" component={Journals} />
+        <Route exact path="/tabs/mystuff/music" component={Music} />
+        <Route exact path="/tabs/mystuff/bookmark" component={BookMarks} />
         <Route exact path="/tabs/profile/setting" component={Settings} />
+        <Route exact path="/tabs/profile/downloads" component={Downloads} />
         <Route exact path="/tabs/notifications" component={Notifications} />
         <Route exact path="/tabs/program">
           <Redirect to="/tabs/program/welcome" />
@@ -77,21 +83,21 @@ const Tabs: React.FC = () => {
       <IonTabBar slot="bottom" className="rounded-t-xl">
         <IonTabButton tab="program" href="/tabs/program">
           <IonIcon icon={heart} />
-          <IonLabel className="text-xs font-medium font-roboto">
+          <IonLabel className="text-xs font-medium font-robotoMedium">
             MyProgram
           </IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="mystuff" href="/tabs/mystuff">
           <IonIcon icon={albums} />
-          <IonLabel className="text-xs font-medium font-roboto">
+          <IonLabel className="text-xs font-medium font-robotoMedium">
             MyStuff
           </IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="profile" href="/tabs/profile">
           <IonIcon icon={person} />
-          <IonLabel className="text-xs font-medium font-roboto">
+          <IonLabel className="text-xs font-medium font-robotoMedium">
             Profile
           </IonLabel>
         </IonTabButton>

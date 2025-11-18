@@ -242,17 +242,17 @@ const CustomVideoPlayer: React.FC<Props> = ({
               />
             </div>
 
-            <div className="flex justify-between text-xs font-medium font-roboto text-white opacity-80 mt-2">
+            <div className="flex justify-between text-xs font-medium font-robotoMedium text-white opacity-80 mt-2">
               <div>{formatTime(currentTime)}</div>
               <div>{formatTime(duration)}</div>
             </div>
           </div>
         </div>
         <div className="w-full flex flex-col justify-start">
-          <div className="text-xs font-bold font-roboto text-white">
+          <div className="text-xs font-bold font-robotoBold text-white">
             {title || ""}
           </div>
-          <div className="text-xs font-normal font-roboto text-white">
+          <div className="text-xs font-normal font-robotoNormal text-white">
             Lesson details here
           </div>
         </div>
@@ -280,7 +280,7 @@ const CustomVideoPlayer: React.FC<Props> = ({
               alt="vector"
               className="w-6 h-6"
             />
-            <div className="text-white text-[10px] font-normal font-roboto mt-2">
+            <div className="text-white text-[10px] font-normal font-robotoNormal mt-2">
               Journal
             </div>
           </div>
@@ -294,7 +294,7 @@ const CustomVideoPlayer: React.FC<Props> = ({
               alt="download"
               className="w-6 h-6"
             />
-            <span className="text-white text-[10px] font-normal font-roboto mt-2">
+            <span className="text-white text-[10px] font-normal font-robotoNormal mt-2">
               Download
             </span>
           </button>
@@ -304,7 +304,7 @@ const CustomVideoPlayer: React.FC<Props> = ({
               alt="star"
               className="w-[26px] h-[26px]"
             />
-            <div className="text-white text-[10px] font-normal font-roboto mt-2">
+            <div className="text-white text-[10px] font-normal font-robotoNormal mt-2">
               MyPractice
             </div>
           </div>
@@ -318,7 +318,7 @@ const CustomVideoPlayer: React.FC<Props> = ({
               alt="send"
               className="w-6 h-6"
             />
-            <div className="text-white text-[10px] font-normal font-roboto mt-2">
+            <div className="text-white text-[10px] font-normal font-robotoNormal mt-2">
               Feedback
             </div>
           </button>
@@ -328,7 +328,7 @@ const CustomVideoPlayer: React.FC<Props> = ({
               alt="bookmark"
               className="w-6 h-6"
             />
-            <div className="text-white text-[10px] font-normal font-roboto mt-2">
+            <div className="text-white text-[10px] font-normal font-robotoNormal mt-2">
               Bookmark
             </div>
           </div>

@@ -13,7 +13,7 @@ const Home: React.FC = () => {
           <Header />
 
           <div className="flex flex-row w-full justify-between items-center px-6">
-            <div className="text-2xl font-bold text-[#282828] font-roboto">
+            <div className="text-2xl font-bold text-[#282828] font-robotoBold">
               Ascension App
             </div>
             <NotificationBell count={1} />
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
             <div className="mt-7">
               <MyPractice kind={"music"} />
             </div>
-            <div className="mt-7">
+            <div className="mt-7 pb-12">
               <MyPractice kind={"bookmark"} />
             </div>
           </div>

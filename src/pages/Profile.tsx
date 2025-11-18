@@ -98,7 +98,7 @@ const Profile: React.FC = () => {
           <Header />
           <div className="flex flex-row items-center px-6">
             <div className="w-12 h-12 rounded bg-[#282828]"></div>
-            <div className="text-2xl font-bold ml-3 text-[#282828] font-roboto">
+            <div className="text-2xl font-bold ml-3 text-[#282828] font-robotoBold">
               Ascension App
             </div>
           </div>
@@ -107,13 +107,13 @@ const Profile: React.FC = () => {
             <div className="flex justify-center text-2xl pt-6 text-[#282828] font-bold">
               Update your profile
             </div>
-            <div className="flex justify-center text-sm text-[#282828] font-normal font-roboto">
+            <div className="flex justify-center text-sm text-[#282828] font-normal font-robotoNormal">
               Hello there! Let's update your profile so we can keep in touch
             </div>
 
             <div className="space-y-4">
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   First name
                 </span>
                 <input
@@ -133,7 +133,7 @@ const Profile: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Last name
                 </span>
                 <input
@@ -156,7 +156,7 @@ const Profile: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Address line 1
                 </span>
                 <input
@@ -179,7 +179,7 @@ const Profile: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828]  font-normal font-roboto">
+                <span className="text-sm text-[#282828]  font-normal font-robotoNormal">
                   Address line 2
                 </span>
                 <input
@@ -192,7 +192,7 @@ const Profile: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   City
                 </span>
                 <input
@@ -215,7 +215,7 @@ const Profile: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   State
                 </span>
                 <input
@@ -238,7 +238,7 @@ const Profile: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Zip
                 </span>
                 <input
@@ -261,7 +261,7 @@ const Profile: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Country
                 </span>
                 <input
@@ -284,7 +284,7 @@ const Profile: React.FC = () => {
               </div>
 
               <div className="space-y-2 mt-6">
-                <span className="text-sm text-[#282828] font-normal font-roboto">
+                <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                   Phone Number
                 </span>
                 <input
@@ -308,13 +308,13 @@ const Profile: React.FC = () => {
             </div>
 
             <button
-              className="w-full mt-6 rounded-xl p-4 text-white font-medium font-roboto text-sm button-gradient"
+              className="w-full mt-6 rounded-xl p-4 text-white font-medium font-robotoMedium text-sm button-gradient"
               onClick={handleContinue}
             >
               Continue
             </button>
 
-            <span className="flex w-full justify-center text-sm font-normal font-roboto text-[#282828] underline mt-3 pb-12">
+            <span className="flex w-full justify-center text-sm font-normal font-robotoNormal text-[#282828] underline mt-3 pb-12">
               Review terms, conditions and data privacy
             </span>
           </div>

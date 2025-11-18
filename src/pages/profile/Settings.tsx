@@ -1,26 +1,41 @@
 import { IonContent, IonPage } from "@ionic/react";
 import React from "react";
+import { useIonRouter } from "@ionic/react";
 
 const Settings: React.FC = () => {
+  const router = useIonRouter();
   return (
     <IonPage>
       <IonContent>
         <div className="max-w-[430px] mx-auto pt-16 px-6 overflow-y-auto">
-          <div className="flex h-12 text-2xl font-bold font-roboto text-[#282828] items-center">
+          <div className="flex h-12 text-2xl font-bold font-robotoBold text-[#282828] items-center">
             Settings
           </div>
-          <div className="flex flex-col mt-7 py-3 px-4 gap-2 border border-[#A9A9A9] rounded-lg">
-            <div className="text-base font-normal font-roboto text-[#282828]">
+          <div className="flex flex-col mt-3 py-3 px-4 gap-2 border border-[#A9A9A9] rounded-lg">
+            <div className="text-base font-normal font-robotoNormal text-[#282828]">
               Sample User
             </div>
-            <div className="text-xs font-normal font-roboto text-[#585858]">
-              Sampleuser@gmail.com
+            <div className="text-xs font-normal font-robotoNormal text-[#585858]">
+              Sampleuser@email.com
             </div>
           </div>
           <div className="flex flex-col gap-3 mt-6">
             <div className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4">
               <div className="text-base font-semibold font-roboto text-[#282828]">
                 Account
+              </div>
+              <img
+                src="/assets/icon/vector.png"
+                alt="vector"
+                className="w-2 h-3"
+              />
+            </div>
+            <div
+              className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4"
+              onClick={() => router.push("/tabs/profile/downloads")}
+            >
+              <div className="text-base font-semibold font-roboto text-[#282828]">
+                Downloads
               </div>
               <img
                 src="/assets/icon/vector.png"

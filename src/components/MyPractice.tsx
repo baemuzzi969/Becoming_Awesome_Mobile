@@ -43,6 +43,10 @@ const MyPractice: React.FC<MyPracticeProps> = ({ kind }) => {
       router.push("/tabs/mystuff/lessons", "forward", "push");
     } else if (kind === "assessment") {
       router.push("/tabs/mystuff/assessment", "forward", "push");
+    } else if (kind === "music") {
+      router.push("/tabs/mystuff/music", "forward", "push");
+    } else if (kind === "bookmark") {
+      router.push("/tabs/mystuff/bookmark", "forward", "push");
     }
     // Add navigation for other kinds if needed
   };
@@ -54,7 +58,7 @@ const MyPractice: React.FC<MyPracticeProps> = ({ kind }) => {
         onClick={handleTitleClick}
         className="flex flex-row items-center gap-3"
       >
-        <div className="text-base font-bold font-roboto text-[#282828]">
+        <div className="text-base font-bold font-robotoBold text-[#282828]">
           {title}
         </div>
         <img
@@ -75,14 +79,14 @@ const MyPractice: React.FC<MyPracticeProps> = ({ kind }) => {
               ) : (
                 <img src="/assets/icon/video.png" alt="video" />
               )}
-              <span className="text-[13px] font-bold text-[#282828] font-roboto">
+              <span className="text-[13px] font-bold text-[#282828] font-robotoBold">
                 {video.title}
               </span>
             </div>
-            <p className="text-xs font-normal text-[#282828] font-roboto ml-1">
+            <p className="text-xs font-normal text-[#282828] font-robotoNormal ml-1">
               {video.time}
             </p>
-            <p className="text-[11px] font-normal text-[#585858] font-roboto ml-1">
+            <p className="text-[11px] font-normal text-[#585858] font-robotoNormal ml-1">
               Lesson details here
             </p>
           </div>

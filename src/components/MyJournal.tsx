@@ -12,7 +12,7 @@ const MyJournal: React.FC = () => {
     <div className="pt-3">
       <div className="flex flex-row items-center gap-3">
         <button
-          className="flex flex-row items-center gap-3 text-base font-bold font-roboto text-[#282828]"
+          className="flex flex-row items-center gap-3 text-base font-bold font-robotoBold text-[#282828]"
           onClick={handleTitleClick}
         >
           MyJournal
@@ -24,7 +24,7 @@ const MyJournal: React.FC = () => {
         </button>
       </div>
       <div className="flex flex-row items-center gap-3 mt-3">
-        <div className="text-base font-bold font-roboto text-[#282828]">
+        <div className="text-base font-bold font-robotoBold text-[#282828]">
           All Journals
         </div>
         <img
@@ -36,11 +36,11 @@ const MyJournal: React.FC = () => {
       <div className="mt-2">
         <div className="flex flex-col bg-[#F2F2F2] rounded-2xl w-full h-fit p-3">
           <div className="flex flex-row justify-between">
-            <div className="text-[#282828] font-medium font-roboto text-base">
+            <div className="text-[#282828] font-medium font-robotoMedium text-base">
               Title here
             </div>
             <div className="flex flex-row gap-3 items-center">
-              <div className="text-xs font-normal font-roboto text-white px-2 py-[2px] bg-[#8E185A] rounded-2xl">
+              <div className="text-xs font-normal font-robotoNormal text-white px-2 py-[2px] bg-[#8E185A] rounded-2xl">
                 Lesson Prompts
               </div>
               <img
@@ -55,11 +55,11 @@ const MyJournal: React.FC = () => {
               />
             </div>
           </div>
-          <div className="mt-2 text-[#282828] font-normal font-roboto text-sm">
+          <div className="mt-2 text-[#282828] font-normal font-robotoNormal text-sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore
           </div>
-          <div className="mt-2 text-[#585858] text-xs font-normal font-roboto">
+          <div className="mt-2 text-[#585858] text-xs font-normal font-robotoNormal">
             June 27, 2025
           </div>
         </div>

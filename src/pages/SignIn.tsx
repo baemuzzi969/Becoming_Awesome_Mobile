@@ -50,7 +50,7 @@ const SignIn: React.FC = () => {
           <div className="h-full">
             <div className="flex flex-row items-center px-6">
               <div className="w-12 h-12 rounded bg-[#282828]"></div>
-              <div className="text-2xl font-bold ml-3 text-[#282828] font-roboto">
+              <div className="text-2xl font-bold ml-3 text-[#282828] font-robotoBold">
                 Ascension App
               </div>
             </div>
@@ -58,13 +58,13 @@ const SignIn: React.FC = () => {
               <div className="flex justify-center text-2xl pt-6 text-[#282828] font-bold">
                 Sign in to your account
               </div>
-              <div className="flex justify-center text-sm text-[#282828] font-normal font-roboto">
+              <div className="flex justify-center text-sm text-[#282828] font-normal font-robotoNormal">
                 Welcome back to Awesome community
               </div>
 
               <div className="space-y-4">
                 <div className="space-y-2 mt-6">
-                  <span className="text-sm text-[#282828] font-normal font-roboto">
+                  <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                     Email or Username
                   </span>
                   <input
@@ -89,7 +89,7 @@ const SignIn: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <span className="text-sm text-[#282828] font-normal font-roboto">
+                  <span className="text-sm text-[#282828] font-normal font-robotoNormal">
                     Password
                   </span>
                   <div className="relative">
@@ -133,17 +133,17 @@ const SignIn: React.FC = () => {
                       type="checkbox"
                       className="w-4 h-4 mr-2 accent-[#1D1B20] rounded"
                     />
-                    <span className="text-sm font-normal font-roboto">
+                    <span className="text-sm font-normal font-robotoNormal">
                       Remember me
                     </span>
                   </label>
-                  <div className="text-sm font-normal font-roboto underline">
+                  <div className="text-sm font-normal font-robotoNormal underline">
                     Forgot your password?
                   </div>
                 </div>
 
                 <button
-                  className="w-full mt-6 rounded-xl p-4 text-white font-medium font-roboto text-sm button-gradient"
+                  className="w-full mt-6 rounded-xl p-4 text-white font-medium font-robotoMedium text-sm button-gradient"
                   onClick={handleSignin}
                 >
                   Sign In
@@ -169,7 +169,7 @@ const SignIn: React.FC = () => {
                     alt="Google"
                     className="w-5 h-5"
                   />
-                  <span className="text-base font-medium font-roboto">
+                  <span className="text-base font-medium font-robotoMedium">
                     Sign in with Google
                   </span>
                 </button>
@@ -183,17 +183,17 @@ const SignIn: React.FC = () => {
                     alt="Apple"
                     className="w-5 h-5"
                   />
-                  <span className="text-base font-medium font-roboto">
+                  <span className="text-base font-medium font-robotoMedium">
                     Sign in with Apple
                   </span>
                 </button>
 
                 <div className="text-center mt-6 pb-12">
-                  <span className="underline text-sm font-normal font-roboto">
+                  <span className="underline text-sm font-normal font-robotoNormal">
                     Don't have an account?{" "}
                     <span
                       onClick={() => router.push("/signup")}
-                      className="text-sm font-medium font-roboto"
+                      className="text-sm font-medium font-robotoMedium"
                     >
                       Sign Up
                     </span>

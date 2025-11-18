@@ -14,16 +14,16 @@ const Background: React.FC = () => {
           <Header />
 
           <div className="flex flex-row w-full justify-between items-center px-6">
-            <div className="text-2xl font-bold text-[#282828] font-roboto">
+            <div className="text-2xl font-bold text-[#282828] font-robotoBold">
               Ascension App
             </div>
             <NotificationBell count={1} />
           </div>
           <div className="px-6 mt-3">
-            <div className="text-sm font-bold font-roboto">
+            <div className="text-sm font-bold font-robotoBold">
               Hello Sample User!
             </div>
-            <div className="text-xs font-normal font-roboto">
+            <div className="text-xs font-normal font-robotoNormal">
               It looks like a beautiful day to embrace your ascension journey
               shall we begin?
             </div>
@@ -33,14 +33,14 @@ const Background: React.FC = () => {
             <div className="flex items-center gap-3 pt-6">
               <img src="/assets/icon/angelica-ai.png" alt="angelica" />
               <div>
-                <div className="text-base text-[#282828] font-bold font-roboto">
+                <div className="text-base text-[#282828] font-bold font-robotoBold">
                   Angelica AI Ascension Guide
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col justify-between min-h-[400px] mt-5 border border-solid border-[#A9A9A9] rounded-xl p-3">
-              <div className="text-xs text-[#282828] font-normal font-roboto">
+              <div className="text-xs text-[#282828] font-normal font-robotoNormal">
                 <span>
                   [Name], would you like to review Peter’s and Tracy’s resume?
                   simply click the buttons below to take a look.
@@ -51,10 +51,10 @@ const Background: React.FC = () => {
               <div className="flex flex-col items-end w-full">
                 <div className="w-full border-t border-[#A9A9A9]"></div>
                 <div className="flex flex-row gap-4">
-                  <button className="mt-6 rounded-xl px-1 py-4 text-[#282828] font-medium text-sm bg-white border border-solid border-[#282828]">
+                  <button className="mt-6 rounded-xl px-1 py-4 text-[#282828] font-medium font-robotoMedium text-sm bg-white border border-solid border-[#282828]">
                     Peter's Background
                   </button>
-                  <button className="mt-6 rounded-xl px-1 py-4 text-[#282828] font-medium text-sm bg-white border border-solid border-[#282828]">
+                  <button className="mt-6 rounded-xl px-1 py-4 text-[#282828] font-medium font-robotoMedium text-sm bg-white border border-solid border-[#282828]">
                     Tracy's Background
                   </button>
                   <button
@@ -65,7 +65,7 @@ const Background: React.FC = () => {
                         "replace"
                       );
                     }}
-                    className="mt-6 rounded-xl px-3 py-4 text-white font-medium text-sm button-gradient"
+                    className="mt-6 rounded-xl px-3 py-4 text-white font-medium font-robotoMedium text-sm button-gradient"
                   >
                     Next
                   </button>

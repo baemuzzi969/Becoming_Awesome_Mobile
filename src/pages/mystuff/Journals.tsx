@@ -60,7 +60,7 @@ const Journals: React.FC = () => {
           <Header />
 
           <div className="flex flex-row w-full justify-between items-center px-6">
-            <div className="text-2xl font-bold text-[#282828] font-roboto">
+            <div className="text-2xl font-bold text-[#282828] font-robotoBold">
               Ascension App
             </div>
             <NotificationBell count={1} />
@@ -68,7 +68,7 @@ const Journals: React.FC = () => {
 
           <div className="bg-white mt-6 px-6 w-full h-full pb-12">
             <div className="flex flex-row justify-between items-center pt-2">
-              <div className="text-[#282828] text-base font-bold font-roboto">
+              <div className="text-[#282828] text-base font-bold font-robotoBold">
                 MyJournal
               </div>
               <div className="flex items-center justify-end gap-2">
@@ -96,7 +96,7 @@ const Journals: React.FC = () => {
                   key={filter.id}
                   type="button"
                   onClick={() => setActiveFilter(filter.id)}
-                  className={`px-2 py-2 rounded-lg text-sm font-bold font-roboto whitespace-nowrap transition-colors shrink-0 ${
+                  className={`px-2 py-2 rounded-lg text-sm font-bold font-robotoBold whitespace-nowrap transition-colors shrink-0 ${
                     activeFilter === filter.id
                       ? "bg-[#F2F2F2] text-[#282828]"
                       : "bg-transparent text-[#282828]"
@@ -110,11 +110,11 @@ const Journals: React.FC = () => {
               <div className="mt-2" key={index}>
                 <div className="flex flex-col bg-[#F2F2F2] rounded-2xl w-full h-fit p-3">
                   <div className="flex flex-row justify-between">
-                    <div className="text-[#282828] font-medium font-roboto text-base">
+                    <div className="text-[#282828] font-medium font-robotoMedium text-base">
                       Title here
                     </div>
                     <div className="flex flex-row gap-3 items-center">
-                      <div className="text-xs font-normal font-roboto text-white px-2 py-[2px] bg-[#8E185A] rounded-2xl">
+                      <div className="text-xs font-normal font-robotoNormal text-white px-2 py-[2px] bg-[#8E185A] rounded-2xl">
                         Lesson Prompts
                       </div>
                       <img
@@ -129,11 +129,11 @@ const Journals: React.FC = () => {
                       />
                     </div>
                   </div>
-                  <div className="mt-2 text-[#282828] font-normal font-roboto text-sm">
+                  <div className="mt-2 text-[#282828] font-normal font-robotoNormal text-sm">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore
                   </div>
-                  <div className="mt-2 text-[#585858] text-xs font-normal font-roboto">
+                  <div className="mt-2 text-[#585858] text-xs font-normal font-robotoNormal">
                     June 27, 2025
                   </div>
                 </div>

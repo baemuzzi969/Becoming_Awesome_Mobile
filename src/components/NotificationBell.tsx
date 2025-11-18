@@ -26,7 +26,7 @@ const NotificationBell: React.FC<NotificationBellProps> = ({
         <img src="/assets/icon/alarm.png" alt="alarm" />
       </div>
       {count > 0 && (
-        <span className="absolute bottom-1 right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[#FF2D2D] text-xs font-bold font-roboto text-white">
+        <span className="absolute bottom-1 right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[#FF2D2D] text-xs font-bold font-robotoBold text-white">
           {count}
         </span>
       )}

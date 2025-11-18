@@ -54,7 +54,7 @@ const DownloadDialog: React.FC<Props> = ({ isOpen, onClose, onDownload }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="h-full flex flex-col">
-          <div className="px-6 pt-4 pb-3 text-xl font-bold text-[#282828] font-roboto">
+          <div className="px-6 pt-4 pb-3 text-xl font-bold text-[#282828] font-robotoBold">
             Download
           </div>
           <div className="border-t border-[#A9A9A9]" />
@@ -67,7 +67,7 @@ const DownloadDialog: React.FC<Props> = ({ isOpen, onClose, onDownload }) => {
                 onChange={() => setSelected("video")}
                 className="w-6 h-6 accent-[#282828]"
               />
-              <span className="text-base text-[#282828] font-roboto font-normal">
+              <span className="text-base text-[#282828] font-robotoNormal font-normal">
                 Video
               </span>
             </label>
@@ -79,7 +79,7 @@ const DownloadDialog: React.FC<Props> = ({ isOpen, onClose, onDownload }) => {
                 onChange={() => setSelected("transcript")}
                 className="w-6 h-6 accent-[#282828]"
               />
-              <span className="text-base text-[#282828] font-roboto font-normal">
+              <span className="text-base text-[#282828] font-robotoNormal font-normal">
                 Transcript
               </span>
             </label>
@@ -91,7 +91,7 @@ const DownloadDialog: React.FC<Props> = ({ isOpen, onClose, onDownload }) => {
                 onChange={() => setSelected("both")}
                 className="w-6 h-6 accent-[#282828]"
               />
-              <span className="text-base text-[#282828] font-roboto font-normal">
+              <span className="text-base text-[#282828] font-robotoNormal font-normal">
                 Video and Transcript
               </span>
             </label>

@@ -15,16 +15,16 @@ const Tutorial: React.FC = () => {
           <Header />
 
           <div className="flex flex-row w-full justify-between items-center px-6">
-            <div className="text-2xl font-bold text-[#282828] font-roboto">
+            <div className="text-2xl font-bold text-[#282828] font-robotoBold">
               Ascension App
             </div>
             <NotificationBell count={1} />
           </div>
           <div className="px-6 mt-3">
-            <div className="text-sm font-bold font-roboto">
+            <div className="text-sm font-bold font-robotoBold">
               Hello Sample User!
             </div>
-            <div className="text-xs font-normal font-roboto">
+            <div className="text-xs font-normal font-robotoNormal">
               It looks like a beautiful day to embrace your ascension journey
               shall we begin?
             </div>
@@ -35,14 +35,14 @@ const Tutorial: React.FC = () => {
             <div className="flex items-center gap-3 pt-6">
               <img src="/assets/icon/angelica-ai.png" alt="angelica" />
               <div>
-                <div className="text-base text-[#282828] font-bold font-roboto">
+                <div className="text-base text-[#282828] font-bold font-robotoBold">
                   Angelica AI Ascension Guide
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col justify-between min-h-[400px] mt-5 border border-solid border-[#A9A9A9] rounded-xl p-3">
-              <div className="text-xs text-[#282828] font-normal font-roboto">
+              <div className="text-xs text-[#282828] font-normal font-robotoNormal">
                 <span>
                   [Name], have you explored the Maitreja app yet? <br />
                   <br />
@@ -69,7 +69,7 @@ const Tutorial: React.FC = () => {
                         "replace"
                       );
                     }}
-                    className="flex flex-row justify-between items-center gap-2 w-1/2 mt-6 rounded-xl p-4 text-[#282828] font-medium text-sm border border-solid border-[#282828 ]"
+                    className="flex flex-row justify-between items-center gap-2 w-1/2 mt-6 rounded-xl p-4 text-[#282828] font-medium font-robotoMedium text-sm border border-solid border-[#282828 ]"
                   >
                     Maitreja App Tutorial
                   </button>
@@ -82,7 +82,7 @@ const Tutorial: React.FC = () => {
                         "replace"
                       );
                     }}
-                    className="flex flex-row justify-between items-center gap-2 w-1/2 mt-6 rounded-xl p-4 text-white font-medium text-sm button-gradient"
+                    className="flex flex-row justify-between items-center gap-2 w-1/2 mt-6 rounded-xl p-4 text-white font-medium font-robotoMedium text-sm button-gradient"
                   >
                     <img src="/assets/icon/video-play.png" alt="play" />
                     <span>Next lesson</span>
