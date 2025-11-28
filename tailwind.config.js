@@ -9,7 +9,28 @@ module.exports = {
     robotoBlack: ["Roboto-Black", "sans-serif"],
   },
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        fadeIn: "fadeIn 0.3s ease-in-out",
+        slideUp: "slideUp 0.3s ease-in-out",
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        slideUp: {
+          from: {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+      },
+    },
   },
   plugins: [],
 };

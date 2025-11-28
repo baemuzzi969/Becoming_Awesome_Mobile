@@ -53,20 +53,27 @@ const MyPractice: React.FC<MyPracticeProps> = ({ kind }) => {
 
   return (
     <div className="pt-3">
-      <button
-        type="button"
-        onClick={handleTitleClick}
-        className="flex flex-row items-center gap-3"
-      >
-        <div className="text-base font-bold font-robotoBold text-[#282828]">
-          {title}
+      <div className="flex flex-row w-full items-center justify-between">
+        <div className="flex flex-row items-center gap-3">
+          <div className="text-base font-bold font-robotoBold text-[#282828]">
+            {title}
+          </div>
+          <img
+            src="/assets/icon/vector.png"
+            alt="vector"
+            className="w-2 h-3 mt-1"
+          />
         </div>
-        <img
-          src="/assets/icon/vector.png"
-          alt="vector"
-          className="w-2 h-3 mt-1"
-        />
-      </button>
+        {kind &&
+          ["lesson", "music", "assessment", "bookmark"].includes(kind) && (
+            <button
+              className="text-sm font-bold font-robotoBold text-[#282828]"
+              onClick={handleTitleClick}
+            >
+              View All
+            </button>
+          )}
+      </div>
       <Slider {...settings}>
         {videos.map((video, idx) => (
           <div key={idx} className="px-1 mt-5">

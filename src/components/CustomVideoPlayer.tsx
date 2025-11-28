@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Capacitor } from "@capacitor/core";
+import { Directory, Filesystem } from "@capacitor/filesystem";
 import DownloadDialog from "./DownloadDialog";
 import FeedbackDialog from "./FeedbackDialog";
 
@@ -157,18 +159,59 @@ const CustomVideoPlayer: React.FC<Props> = ({
     }
   };
 
-  const handleDownload = (kind: "video" | "transcript" | "both") => {
-    if (kind === "video" || kind === "both") {
-      const a = document.createElement("a");
-      a.href = src;
-      a.download = src.split("/").pop() || "video.mp4";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    }
-    if (kind === "transcript" || kind === "both") {
-      // TODO: wire transcript URL if/when available
-      // console.log("Download transcript");
+  const convertBlobToBase64 = (
+    blob: Blob
+  ): Promise<string | ArrayBuffer | null> =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.readAsDataURL(blob);
+    });
+
+  const handleDownload = async () => {
+    try {
+      const response = await fetch(src);
+      const blob = await response.blob();
+      const currentDate = new Date()
+        .toISOString()
+        .replace(/[:-]/g, "-")
+        .replace("T", "-")
+        .slice(0, 19);
+
+      const tempDate = currentDate.split("-");
+      const formatedDate = `${tempDate[1]}_${
+        tempDate[2]
+      }_${tempDate[0].substring(2)}`;
+
+      const filename = `${formatedDate}_${title}.wav`;
+
+      if (Capacitor.isNativePlatform()) {
+        // Mobile environment
+        const base64 = await convertBlobToBase64(blob);
+        const saveFile = await Filesystem.writeFile({
+          path: filename,
+          // @ts-ignore: Unreachable code error
+          data: base64,
+          directory: Directory.Data,
+        });
+
+        console.log("Saved File url:", saveFile.uri);
+      } else {
+        // Web environment
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      }
+    } catch (error) {
+      console.error("Error fetching audio:", error);
     }
   };
 
@@ -286,7 +329,7 @@ const CustomVideoPlayer: React.FC<Props> = ({
           </div>
           <button
             type="button"
-            onClick={() => setShowDownload(true)}
+            onClick={handleDownload}
             className="flex flex-col items-center"
           >
             <img
@@ -335,11 +378,11 @@ const CustomVideoPlayer: React.FC<Props> = ({
         </div>
       </div>
 
-      <DownloadDialog
+      {/* <DownloadDialog
         isOpen={showDownload}
         onClose={() => setShowDownload(false)}
         onDownload={handleDownload}
-      />
+      /> */}
 
       <FeedbackDialog
         isOpen={showFeedback}

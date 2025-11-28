@@ -10,17 +10,23 @@ const MyJournal: React.FC = () => {
 
   return (
     <div className="pt-3">
-      <div className="flex flex-row items-center gap-3">
-        <button
-          className="flex flex-row items-center gap-3 text-base font-bold font-robotoBold text-[#282828]"
-          onClick={handleTitleClick}
-        >
-          MyJournal
+      <div className="flex flex-row w-full items-center justify-between">
+        <div className="flex flex-row items-center gap-3">
+          <div className="text-base font-bold font-robotoBold text-[#282828]">
+            MyJournal
+          </div>
           <img
             src="/assets/icon/vector.png"
             alt="vector"
             className="w-2 h-3 mt-1"
           />
+        </div>
+
+        <button
+          className="text-sm font-bold font-robotoBold text-[#282828]"
+          onClick={handleTitleClick}
+        >
+          View All
         </button>
       </div>
       <div className="flex flex-row items-center gap-3 mt-3">

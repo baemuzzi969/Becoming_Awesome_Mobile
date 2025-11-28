@@ -31,7 +31,7 @@ const Notifications: React.FC = () => {
             <button type="button" onClick={() => router.goBack()}>
               <img src="/assets/icon/back.png" alt="back" />
             </button>
-            <div className="text-lg font-bold text-[#282828] font-robotoBold">
+            <div className="text-2xl font-bold text-[#282828] font-robotoBold">
               Notifications
             </div>
           </div>

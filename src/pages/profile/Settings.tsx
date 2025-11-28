@@ -7,7 +7,8 @@ const Settings: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <div className="max-w-[430px] mx-auto pt-16 px-6 overflow-y-auto">
+        <div className="max-w-[430px] mx-auto pt-16 px-6 overflow-y-auto pb-12">
+          {/* Settings Menu View */}
           <div className="flex h-12 text-2xl font-bold font-robotoBold text-[#282828] items-center">
             Settings
           </div>
@@ -20,7 +21,10 @@ const Settings: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col gap-3 mt-6">
-            <div className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4">
+            <div
+              className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4 cursor-pointer"
+              onClick={() => router.push("/tabs/profile/account")}
+            >
               <div className="text-base font-semibold font-roboto text-[#282828]">
                 Account
               </div>
@@ -31,7 +35,7 @@ const Settings: React.FC = () => {
               />
             </div>
             <div
-              className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4"
+              className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4 cursor-pointer"
               onClick={() => router.push("/tabs/profile/downloads")}
             >
               <div className="text-base font-semibold font-roboto text-[#282828]">
