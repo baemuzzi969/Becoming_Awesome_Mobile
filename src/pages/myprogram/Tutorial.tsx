@@ -60,7 +60,7 @@ const Tutorial: React.FC = () => {
 
               <div className="flex flex-col items-end w-full">
                 <div className="w-full border-t border-[#A9A9A9]"></div>
-                <div className="flex flex-row w-4/5 justify-end gap-3">
+                <div className="flex flex-row w-4/5 justify-end gap-2">
                   <button
                     onClick={() => {
                       router.push(
@@ -69,7 +69,7 @@ const Tutorial: React.FC = () => {
                         "replace"
                       );
                     }}
-                    className="flex flex-row justify-between items-center gap-2 w-1/2 mt-6 rounded-xl p-4 text-[#282828] font-medium font-robotoMedium text-sm border border-solid border-[#282828 ]"
+                    className="flex flex-row justify-between items-center gap-2 w-1/2 mt-6 rounded-xl px-2 py-4 text-[#282828] font-medium font-robotoMedium text-sm border border-solid border-[#282828]"
                   >
                     Maitreja App Tutorial
                   </button>
@@ -85,12 +85,7 @@ const Tutorial: React.FC = () => {
                     className="flex flex-row justify-between items-center gap-2 w-1/2 mt-6 rounded-xl p-4 text-white font-medium font-robotoMedium text-sm button-gradient"
                   >
                     <img src="/assets/icon/video-play.png" alt="play" />
-                    <span>Next lesson</span>
-                    <img
-                      src="/assets/icon/video-play.png"
-                      alt="play"
-                      className="invisible"
-                    />
+                    <span className="flex-1">Next lesson</span>
                   </button>
                 </div>
               </div>

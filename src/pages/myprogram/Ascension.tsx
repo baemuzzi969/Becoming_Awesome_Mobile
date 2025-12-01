@@ -81,12 +81,7 @@ const Ascension: React.FC = () => {
                   className="flex flex-row justify-between items-center gap-2 min-w-[200px] mt-6 rounded-xl p-4 text-white font-medium font-robotoMedium text-sm button-gradient"
                 >
                   <img src="/assets/icon/video-play.png" alt="play" />
-                  <span>What is Ascension?</span>
-                  <img
-                    src="/assets/icon/video-play.png"
-                    alt="play"
-                    className="invisible"
-                  />
+                  <span className="flex-1">What is Ascension?</span>
                 </button>
               </div>
             </div>

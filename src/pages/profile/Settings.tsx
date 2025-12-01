@@ -97,7 +97,10 @@ const Settings: React.FC = () => {
                 className="w-2 h-3"
               />
             </div>
-            <div className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4">
+            <div
+              className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4"
+              onClick={() => router.push("/signin")}
+            >
               <div className="text-base font-semibold font-roboto text-[#282828]">
                 Log out
               </div>

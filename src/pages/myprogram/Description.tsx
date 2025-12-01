@@ -69,11 +69,11 @@ const Description: React.FC = () => {
                 <div className="w-full border-t border-[#A9A9A9]"></div>
 
                 <button
-                  onClick={() => setIsVideoOpen(true)}
-                  className="flex flex-row items-center gap-2 min-w-[200px] mt-6 rounded-xl p-4 text-white font-medium font-robotoMedium text-sm button-gradient"
+                  onClick={() => router.push("/tabs/program/background")}
+                  className="flex flex-row items-center gap-2 w-3/4 mt-6 rounded-xl p-4 text-white font-medium font-robotoMedium text-sm button-gradient"
                 >
                   <img src="/assets/icon/video-play.png" alt="play" />
-                  <span>Welcome to Becoming Awesome</span>
+                  <span className="flex-1">Welcome to Becoming Awesome</span>
                 </button>
               </div>
             </div>

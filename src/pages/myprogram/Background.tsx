@@ -48,9 +48,9 @@ const Background: React.FC = () => {
                 </span>
               </div>
 
-              <div className="flex flex-col items-end w-full">
+              <div className="flex flex-col w-full">
                 <div className="w-full border-t border-[#A9A9A9]"></div>
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-row w-full gap-2">
                   <button className="mt-6 rounded-xl px-1 py-4 text-[#282828] font-medium font-robotoMedium text-sm bg-white border border-solid border-[#282828]">
                     Peter's Background
                   </button>
@@ -65,7 +65,7 @@ const Background: React.FC = () => {
                         "replace"
                       );
                     }}
-                    className="mt-6 rounded-xl px-3 py-4 text-white font-medium font-robotoMedium text-sm button-gradient"
+                    className="flex-1 mt-6 rounded-xl px-4 py-4 text-white font-medium font-robotoMedium text-sm button-gradient"
                   >
                     Next
                   </button>

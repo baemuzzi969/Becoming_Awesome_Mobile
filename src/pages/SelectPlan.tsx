@@ -7,7 +7,11 @@ const SelectPlan: React.FC = () => {
   const [plan, setPlan] = useState<"free" | "monthly" | "six">("free");
 
   const handleContinue = () => {
-    router.push("/payment-detail");
+    if (plan === "free") {
+      router.push("/tabs/program/welcome");
+    } else {
+      router.push("/payment-detail");
+    }
   };
 
   const ctaText = () => {

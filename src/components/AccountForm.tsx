@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import { IonIcon } from "@ionic/react";
+import { eyeOutline, eyeOffOutline } from "ionicons/icons";
 
 interface AccountData {
   givenName: string;
@@ -36,6 +38,9 @@ const AccountForm: React.FC<AccountFormProps> = ({
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const [countrySearchTerm, setCountrySearchTerm] = useState("");
   const countryDropdownRef = useRef<HTMLDivElement>(null);
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmpassword] = useState(false);
 
   const handleFieldChange = (field: keyof AccountData, value: string) => {
     onDataChange({
@@ -70,13 +75,13 @@ const AccountForm: React.FC<AccountFormProps> = ({
 
   return (
     <div>
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex items-center gap-3 mb-3 h-12">
         <button onClick={onBack} className="text-lg font-bold text-[#282828]">
           <img src="/assets/icon/back.png" alt="back" />
         </button>
-        <h1 className="text-2xl font-bold font-robotoBold text-[#282828]">
+        <div className="text-2xl font-bold font-robotoBold text-[#282828]">
           Account
-        </h1>
+        </div>
       </div>
 
       <div className="bg-white border border-[#A9A9A9] rounded-lg p-4 mb-6">
@@ -133,7 +138,7 @@ const AccountForm: React.FC<AccountFormProps> = ({
               value={data.email}
               placeholder="Enter your email"
               onChange={(e) => handleFieldChange("email", e.target.value)}
-              className="flex-1 bg-transparent text-sm text-[#282828] font-robotomedium focus:outline-none"
+              className="flex-1 bg-transparent text-sm text-[#282828] font-robotomedium focus:outline-none focus:border-[#282828]"
             />
           </div>
         </div>
@@ -157,7 +162,7 @@ const AccountForm: React.FC<AccountFormProps> = ({
               inputComponent={({ className, ...rest }: any) => (
                 <input
                   {...rest}
-                  className={`${className} w-full border-none p-[10px] text-sm text-[#282828] font-robotomedium focus:outline-none`}
+                  className={`${className} w-full border-none p-[10px] text-sm text-[#282828] font-robotomedium focus:outline-none focus:border-[#282828]`}
                 />
               )}
             />
@@ -265,50 +270,73 @@ const AccountForm: React.FC<AccountFormProps> = ({
           <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
             Current Password
           </label>
-          <div className="flex items-center border border-[#A9A9A9] rounded-lg p-[10px]">
+          <div className="flex items-center border border-[#A9A9A9] rounded-lg p-[10px] relative">
             <input
-              type="password"
               placeholder="Enter current password"
+              type={showCurrentPassword ? "text" : "password"}
               value={data.currentPassword}
               onChange={(e) =>
                 handleFieldChange("currentPassword", e.target.value)
               }
-              className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotomedium custom-input"
+              className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotomedium custom-input focus:border-[#282828]"
             />
+            <button
+              className="absolute right-2 top-1/2 transform -translate-y-1/2"
+              onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+            >
+              <IonIcon
+                icon={showCurrentPassword ? eyeOffOutline : eyeOutline}
+                className="w-6 h-5 text-[#282828]"
+              />
+            </button>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          <div>
-            <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
-              New Password
-            </label>
-            <div className="flex items-center border border-[#A9A9A9] rounded-lg p-[10px]">
-              <input
-                type="password"
-                placeholder="Enter new password"
-                value={data.newPassword}
-                onChange={(e) =>
-                  handleFieldChange("newPassword", e.target.value)
-                }
-                className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotomedium custom-input"
+        <div className="mb-4">
+          <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+            New Password
+          </label>
+          <div className="flex items-center border border-[#A9A9A9] rounded-lg p-[10px] relative">
+            <input
+              type={showNewPassword ? "text" : "password"}
+              placeholder="Enter new password"
+              value={data.newPassword}
+              onChange={(e) => handleFieldChange("newPassword", e.target.value)}
+              className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotomedium custom-input"
+            />
+            <button
+              className="absolute right-2 top-1/2 transform -translate-y-1/2"
+              onClick={() => setShowNewPassword(!showNewPassword)}
+            >
+              <IonIcon
+                icon={showNewPassword ? eyeOffOutline : eyeOutline}
+                className="w-6 h-5 text-[#282828]"
               />
-            </div>
+            </button>
           </div>
-          <div>
-            <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
-              Confirm New Password
-            </label>
-            <div className="flex items-center border border-[#A9A9A9] rounded-lg p-[10px]">
-              <input
-                type="password"
-                placeholder="Confirm new password"
-                value={data.confirmPassword}
-                onChange={(e) =>
-                  handleFieldChange("confirmPassword", e.target.value)
-                }
-                className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotomedium custom-input"
+        </div>
+        <div className="mb-4">
+          <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+            Confirm New Password
+          </label>
+          <div className="flex items-center border border-[#A9A9A9] rounded-lg p-[10px] relative">
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="Confirm new password"
+              value={data.confirmPassword}
+              onChange={(e) =>
+                handleFieldChange("confirmPassword", e.target.value)
+              }
+              className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotomedium custom-input"
+            />
+            <button
+              className="absolute right-2 top-1/2 transform -translate-y-1/2"
+              onClick={() => setShowConfirmpassword(!showConfirmPassword)}
+            >
+              <IonIcon
+                icon={showConfirmPassword ? eyeOffOutline : eyeOutline}
+                className="w-6 h-5 text-[#282828]"
               />
-            </div>
+            </button>
           </div>
         </div>
         <div className="mb-4 p-3 bg-blue-50 rounded-lg">
@@ -328,7 +356,7 @@ const AccountForm: React.FC<AccountFormProps> = ({
 
       <button
         onClick={onSave}
-        className="w-full text-sm text-white font-bold font-robotobold py-3 rounded-lg mb-6 button-gradient"
+        className="w-full text-sm text-white font-bold font-robotobold py-3 rounded-lg button-gradient"
       >
         Save Changes
       </button>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { IonPage, IonContent, useIonRouter } from "@ionic/react";
-import Header from "../../components/Header";
 
 type DownloadItem = {
   id: string;
@@ -11,6 +10,7 @@ type DownloadItem = {
 };
 
 const Downloads: React.FC = () => {
+  const router = useIonRouter();
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   // Sample data - replace with actual data from your backend
@@ -45,12 +45,24 @@ const Downloads: React.FC = () => {
     },
   ];
 
+  const handleBack = () => {
+    router.push("/tabs/profile/setting");
+  };
+
   return (
     <IonPage>
       <IonContent>
         <div className="max-w-[430px] h-full mx-auto pt-16 px-6 overflow-y-auto relative">
-          <div className="flex h-12 text-2xl font-bold font-robotoBold text-[#282828] items-center">
-            Downloads
+          <div className="flex items-center gap-3 mb-3 h-12">
+            <button
+              onClick={handleBack}
+              className="text-lg font-bold text-[#282828]"
+            >
+              <img src="/assets/icon/back.png" alt="back" />
+            </button>
+            <div className="flex text-2xl font-bold font-robotoBold text-[#282828] items-center">
+              Downloads
+            </div>
           </div>
           <div className="flex flex-col mt-3 py-3 px-4 gap-2 border border-[#A9A9A9] rounded-lg">
             <div className="text-base font-normal font-robotoNormal text-[#282828]">

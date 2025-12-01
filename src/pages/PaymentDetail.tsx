@@ -182,7 +182,7 @@ const PaymentDetail: React.FC = () => {
                     errors.expDate ? "border-red-500" : "border-[#A9A9A9]"
                   } rounded-lg w-full p-[10px] outline-none`}
                   placeholder="Sample Expiration Date"
-                  type="date"
+                  type="text"
                   value={expDate}
                   onChange={(e) => {
                     setExpDate(e.target.value);
