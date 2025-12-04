@@ -29,6 +29,9 @@ import Journals from "./mystuff/Journals";
 import Settings from "./profile/Settings";
 import Account from "./profile/Account";
 import Downloads from "./profile/Downloads";
+import Subscription from "./profile/Subscription";
+import BillingInfo from "./profile/BillingInfo";
+import Donation from "./profile/Donation";
 import Notifications from "./Notifications";
 import Music from "./mystuff/Music";
 import BookMarks from "./mystuff/Bookmarks";
@@ -70,6 +73,9 @@ const Tabs: React.FC = () => {
         <Route exact path="/tabs/profile/setting" component={Settings} />
         <Route exact path="/tabs/profile/account" component={Account} />
         <Route exact path="/tabs/profile/downloads" component={Downloads} />
+        <Route exact path="/tabs/profile/subscription" component={Subscription} />
+        <Route exact path="/tabs/profile/billing-info" component={BillingInfo} />
+        <Route exact path="/tabs/profile/donation" component={Donation} />
         <Route exact path="/tabs/notifications" component={Notifications} />
         <Route exact path="/tabs/program">
           <Redirect to="/tabs/program/welcome" />

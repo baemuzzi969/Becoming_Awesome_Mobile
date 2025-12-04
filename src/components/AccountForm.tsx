@@ -86,16 +86,16 @@ const AccountForm: React.FC<AccountFormProps> = ({
 
       <div className="bg-white border border-[#A9A9A9] rounded-lg p-4 mb-6">
         <div className="flex flex-col items-start mb-4">
-          <div className="text-base font-bold text-[#282828] font-robotobold">
+          <div className="text-base font-bold text-[#282828] font-robotoBold">
             Personal Information
           </div>
-          <div className="text-xs text-[#585858] font-robotomedium">
+          <div className="text-xs text-[#585858] font-robotoMedium">
             Update your personal details
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+            <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
               Given name
             </label>
             <input
@@ -103,11 +103,11 @@ const AccountForm: React.FC<AccountFormProps> = ({
               placeholder="Enter your first name"
               value={data.givenName}
               onChange={(e) => handleFieldChange("givenName", e.target.value)}
-              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] font-robotomedium focus:outline-none focus:border-[#282828]"
+              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] font-robotoMedium focus:outline-none focus:border-[#282828]"
             />
           </div>
           <div>
-            <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+            <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
               Last name
             </label>
             <input
@@ -115,7 +115,7 @@ const AccountForm: React.FC<AccountFormProps> = ({
               placeholder="Enter your last name"
               value={data.lastName}
               onChange={(e) => handleFieldChange("lastName", e.target.value)}
-              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828]  font-robotomedium focus:outline-none focus:border-[#282828]"
+              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828]  font-robotoMedium focus:outline-none focus:border-[#282828]"
             />
           </div>
         </div>
@@ -123,13 +123,13 @@ const AccountForm: React.FC<AccountFormProps> = ({
 
       <div className="bg-white border border-[#A9A9A9] rounded-lg p-4 mb-6">
         <div className="flex flex-col items-start mb-4">
-          <div className="text-base font-bold text-[#282828] font-robotobold">
+          <div className="text-base font-bold text-[#282828] font-robotoBold">
             Contact Information
           </div>
           <div className="text-xs text-[#585858]">How can we reach you?</div>
         </div>
         <div className="mb-4">
-          <label className="text-xs font-bold text-[#282828] font-robotobold mb-2">
+          <label className="text-xs font-bold text-[#282828] font-robotoBold mb-2">
             Email Address
           </label>
           <div className="flex items-center border border-[#A9A9A9] rounded-lg p-[10px]">
@@ -138,12 +138,12 @@ const AccountForm: React.FC<AccountFormProps> = ({
               value={data.email}
               placeholder="Enter your email"
               onChange={(e) => handleFieldChange("email", e.target.value)}
-              className="flex-1 bg-transparent text-sm text-[#282828] font-robotomedium focus:outline-none focus:border-[#282828]"
+              className="flex-1 bg-transparent text-sm text-[#282828] font-robotoMedium focus:outline-none focus:border-[#282828]"
             />
           </div>
         </div>
         <div>
-          <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+          <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
             Phone Number
           </label>
           <div>
@@ -158,11 +158,11 @@ const AccountForm: React.FC<AccountFormProps> = ({
               onCountryChange={(country) => {
                 if (country) handleFieldChange("phoneCountry", country);
               }}
-              className="w-full border border-[#A9A9A9] rounded-lg px-2 text-sm text-[#282828] focus:outline-none font-robotomedium"
+              className="w-full border border-[#A9A9A9] rounded-lg px-2 text-sm text-[#282828] focus:outline-none font-robotoMedium"
               inputComponent={({ className, ...rest }: any) => (
                 <input
                   {...rest}
-                  className={`${className} w-full border-none p-[10px] text-sm text-[#282828] font-robotomedium focus:outline-none focus:border-[#282828]`}
+                  className={`${className} w-full border-none p-[10px] text-sm text-[#282828] font-robotoMedium focus:outline-none focus:border-[#282828]`}
                 />
               )}
             />
@@ -176,78 +176,78 @@ const AccountForm: React.FC<AccountFormProps> = ({
       <div className="bg-white border border-[#A9A9A9] rounded-lg p-4 mb-6">
         <div className="flex items-start gap-3 mb-4">
           <div>
-            <h2 className="text-base font-bold text-[#282828] font-robotobold">
+            <h2 className="text-base font-bold text-[#282828] font-robotoBold">
               Address Information
             </h2>
             <p className="text-xs text-[#585858]">Your residential address</p>
           </div>
         </div>
         <div className="mb-4">
-          <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+          <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
             Address line 1
           </label>
           <input
             type="text"
             value={data.addressLine1}
             onChange={(e) => handleFieldChange("addressLine1", e.target.value)}
-            className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotomedium"
+            className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotoMedium"
           />
         </div>
         <div className="mb-4">
-          <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+          <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
             Address line 2 <span className="text-[#585858]">(Optional)</span>
           </label>
           <input
             type="text"
             value={data.addressLine2}
             onChange={(e) => handleFieldChange("addressLine2", e.target.value)}
-            className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotomedium"
+            className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotoMedium"
           />
         </div>
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
-            <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+            <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
               City
             </label>
             <input
               type="text"
               value={data.city}
               onChange={(e) => handleFieldChange("city", e.target.value)}
-              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotomedium"
+              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotoMedium"
             />
           </div>
           <div>
-            <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+            <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
               State / Province
             </label>
             <input
               type="text"
               value={data.state}
               onChange={(e) => handleFieldChange("state", e.target.value)}
-              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotomedium"
+              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotoMedium"
             />
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+            <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
               Zip / Postal Code
             </label>
             <input
               type="text"
               value={data.zipCode}
               onChange={(e) => handleFieldChange("zipCode", e.target.value)}
-              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotomedium"
+              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotoMedium"
             />
           </div>
           <div>
-            <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+            <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
               Country
             </label>
             <select
               value={data.country}
               onChange={(e) => handleFieldChange("country", e.target.value)}
-              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotomedium"
+              className="w-full border border-[#A9A9A9] rounded-lg p-[10px] text-sm text-[#282828] focus:outline-none focus:border-[#282828] font-robotoMedium"
             >
               <option value="CA Canada">CA Canada</option>
               <option value="US USA">US USA</option>
@@ -262,12 +262,12 @@ const AccountForm: React.FC<AccountFormProps> = ({
           <div className="text-base font-bold text-[#282828]">
             Security & Password
           </div>
-          <div className="text-xs text-[#585858] font-robotomedium">
+          <div className="text-xs text-[#585858] font-robotoMedium">
             Change your password
           </div>
         </div>
         <div className="mb-4">
-          <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+          <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
             Current Password
           </label>
           <div className="flex items-center border border-[#A9A9A9] rounded-lg p-[10px] relative">
@@ -278,7 +278,7 @@ const AccountForm: React.FC<AccountFormProps> = ({
               onChange={(e) =>
                 handleFieldChange("currentPassword", e.target.value)
               }
-              className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotomedium custom-input focus:border-[#282828]"
+              className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotoMedium custom-input focus:border-[#282828]"
             />
             <button
               className="absolute right-2 top-1/2 transform -translate-y-1/2"
@@ -292,7 +292,7 @@ const AccountForm: React.FC<AccountFormProps> = ({
           </div>
         </div>
         <div className="mb-4">
-          <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+          <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
             New Password
           </label>
           <div className="flex items-center border border-[#A9A9A9] rounded-lg p-[10px] relative">
@@ -301,7 +301,7 @@ const AccountForm: React.FC<AccountFormProps> = ({
               placeholder="Enter new password"
               value={data.newPassword}
               onChange={(e) => handleFieldChange("newPassword", e.target.value)}
-              className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotomedium custom-input"
+              className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotoMedium custom-input"
             />
             <button
               className="absolute right-2 top-1/2 transform -translate-y-1/2"
@@ -315,7 +315,7 @@ const AccountForm: React.FC<AccountFormProps> = ({
           </div>
         </div>
         <div className="mb-4">
-          <label className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+          <label className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
             Confirm New Password
           </label>
           <div className="flex items-center border border-[#A9A9A9] rounded-lg p-[10px] relative">
@@ -326,7 +326,7 @@ const AccountForm: React.FC<AccountFormProps> = ({
               onChange={(e) =>
                 handleFieldChange("confirmPassword", e.target.value)
               }
-              className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotomedium custom-input"
+              className="flex-1 bg-transparent text-sm text-[#282828] focus:outline-none font-robotoMedium custom-input"
             />
             <button
               className="absolute right-2 top-1/2 transform -translate-y-1/2"
@@ -340,23 +340,23 @@ const AccountForm: React.FC<AccountFormProps> = ({
           </div>
         </div>
         <div className="mb-4 p-3 bg-blue-50 rounded-lg">
-          <p className="text-xs font-bold text-[#282828] mb-2 font-robotobold">
+          <p className="text-xs font-bold text-[#282828] mb-2 font-robotoBold">
             Password Requirements:
           </p>
-          <ul className="text-xs text-[#585858] font-robotomedium space-y-1 list-disc list-inside">
+          <ul className="text-xs text-[#585858] font-robotoMedium space-y-1 list-disc list-inside">
             <li>At least 8 characters long</li>
             <li>Contains uppercase and lowercase letters</li>
             <li>Includes at least one number</li>
           </ul>
         </div>
-        <button className="w-full text-sm text-white font-bold font-robotobold py-3 rounded-lg button-gradient">
+        <button className="w-full text-sm text-white font-bold font-robotoBold py-3 rounded-lg button-gradient">
           Update Password
         </button>
       </div>
 
       <button
         onClick={onSave}
-        className="w-full text-sm text-white font-bold font-robotobold py-3 rounded-lg button-gradient"
+        className="w-full text-sm text-white font-bold font-robotoBold py-3 rounded-lg button-gradient"
       >
         Save Changes
       </button>

@@ -47,7 +47,10 @@ const Settings: React.FC = () => {
                 className="w-2 h-3"
               />
             </div>
-            <div className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4">
+            <div
+              className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4 cursor-pointer"
+              onClick={() => router.push("/tabs/profile/subscription")}
+            >
               <div className="text-base font-semibold font-roboto text-[#282828]">
                 Subscription
               </div>
@@ -57,7 +60,10 @@ const Settings: React.FC = () => {
                 className="w-2 h-3"
               />
             </div>
-            <div className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4">
+            <div
+              className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4 cursor-pointer"
+              onClick={() => router.push("/tabs/profile/billing-info")}
+            >
               <div className="text-base font-semibold font-roboto text-[#282828]">
                 Billing info
               </div>
@@ -67,7 +73,10 @@ const Settings: React.FC = () => {
                 className="w-2 h-3"
               />
             </div>
-            <div className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4">
+            <div
+              className="flex flex-row justify-between border border-[#A9A9A9] rounded-lg items-center py-3 px-4 cursor-pointer"
+              onClick={() => router.push("/tabs/profile/donation")}
+            >
               <div className="text-base font-semibold font-roboto text-[#282828]">
                 Donation
               </div>
